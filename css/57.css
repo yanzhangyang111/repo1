@@ -1,9 +1,20 @@
 #no57 {
-    background-image: linear-gradient(-123deg, #00DFF6 0%, #03D5F4 7%, #254CD5 100%);
+<<<<<<< HEAD
+display :none;
+
     color: whitesmoke;
-    height: 45px;
+    width: 100%;
+    height: 88888px;
     border: 2px dashed skyblue;
     text-align: center;
     line-height: 45px;
     font-size: 30px;
+    position: absolute;
+    z-index: 99999999;
+    top: 0;
+    left: 0;
+=======
+    background-color: skyblue;
+    background-image: url
+>>>>>>> dcb65dc73f7db50800f0f13fc866dec4ff3bbbdc
 }
