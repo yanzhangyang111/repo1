@@ -1,0 +1,8 @@
+#no54 {
+    width: 100%;
+    height: 100px;
+    color: blue;
+   font-size: 48px;
+    background-image: linear-gradient(-123deg, red 0%,blue 8% ,pink 100%);
+    border: 4px solid yellow;;
+}
