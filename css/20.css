@@ -1,0 +1,10 @@
+#no20 {
+    font-size: 144px;
+    font-weight: 700;
+    font-family: '楷体';
+    background-color: #ddd;
+    text-shadow: 3px;
+    color: orange;
+    text-align: center;
+    font-style: italic;
+}
