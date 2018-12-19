@@ -1,5 +1,6 @@
 #no55 {
-    position: absolute;
+    position: relative;
+    top: 0px;
     z-index: 1000000;
     background-color: white;
     height: 10000px;
