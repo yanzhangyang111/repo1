@@ -1,9 +1,20 @@
 #no4{
-    background-color: black;
-	color: white;
-	box-shadow: 0 0 10px 100px red;
+	margin: 40px auto ;
+    background-color: red;
+	/* box-shadow: 0 0 10px 10px red; */
 	width: 500px;
 	height: 200px;
-	line-height: 200px
-	border-radius: 20px
+	text-align: center;
+	border-radius: 20px;
+	line-height: 200px;
+}
+#no4>a{
+	text-decoration: none;
+	color: white;
+	font-family: "楷体";
+	font-size: 30px;
+}
+#no4:hover{
+	background-color: red;
+	box-shadow: 0 0 10px 10px black;
 }
