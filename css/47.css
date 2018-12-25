@@ -1,1 +1,11 @@
-#no47:after{margin-left: 50px;content: "白色背景 white bgc";}
+#no47 {
+    display: block;
+    line-height: 100px;
+    color: #4D157D;
+    text-decoration: none;
+}
+
+#no47:after {
+    margin-left: 50px;
+    content: "TEST";
+}
