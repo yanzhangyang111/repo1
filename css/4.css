@@ -1,3 +1,9 @@
 #no4{
-    background-color: pink;
+    background-color: black;
+	color: white;
+	box-shadow: 0 0 10px 100px red;
+	width: 500px;
+	height: 200px;
+	line-height: 200px
+	border-radius: 20px
 }
