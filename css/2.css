@@ -6,7 +6,7 @@
     height: 200px;
     /* background: aqua; */
     font-size: 32px;
-    color:transparent;
+    /* color:transparent; */
     /* box-shadow: 0 0 5px 5px rgb(32, 255, 255); */
     vertical-align: center;
     animation: ani 0.5s ease infinite;
@@ -24,18 +24,17 @@
     position: absolute;
     width: 80px;
     height: 120px;
+    top: 40px;
     background: rgb(180, 1, 1);
     border-radius: 100px 100px 0 0;
 }
 #no2::before{
     transform: rotateZ(-45deg);
     left:67px;
-    top: 10px;
 }
 #no2::after{
     transform: rotateZ(45deg);
     left:96px;
-    top: 10px;
 }
 
 @keyframes ani{
