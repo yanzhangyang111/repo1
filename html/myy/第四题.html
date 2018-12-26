@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>第四题</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        section {
+            width: 800px;
+            height: auto;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        1、 在打开页面时弹出一个确认对话框
+        2、 显示:“你确定继续浏览吗,”。如果用户点击确定，
+        则用alert显示信息“欢迎光临～”;若用户点击取消，则用alert显示信息“欢迎再来～”并使用window.close 关闭页面
+    </section>
+    <script>
+        var flag = window.confirm("你确定继续浏览吗");
+        if (flag) {
+            alert("欢迎光临～");
+        } else {
+            alert("欢迎再来～");
+            window.close();
+        }
+    </script>
+</body>
+
+</html>
