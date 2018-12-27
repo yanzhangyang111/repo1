@@ -29,7 +29,9 @@
     transform: rotateZ(45deg);
     left:96px;
 }
-
+#no2 a{
+    text-decoration: none;
+}
 @keyframes ani{
     form{
         transform:scale(1);
