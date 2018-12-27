@@ -4,18 +4,11 @@
     top:20px;
     width: 200px;
     height: 200px;
-    /* background: aqua; */
     font-size: 32px;
-    color:transparent;
-    /* box-shadow: 0 0 5px 5px rgb(32, 255, 255); */
     vertical-align: center;
     animation: ani 0.5s ease infinite;
     animation-direction: alternate;
     z-index:99999;
-    /* transform: scale(1.2) ;
-    transition: all 0.1s ease ; */
-    /* transform: skewX(-30deg) translateX(30px); */
-    /* -webkit-box-reflect: below 5px -webkit-linear-gradient(top, rgba(0,0,0, 0) 20%,rgba(0,0,0,.5) 100%); */
 }
 #no2::before,
 #no2::after{
@@ -24,18 +17,17 @@
     position: absolute;
     width: 80px;
     height: 120px;
-    background: rgb(180, 1, 1);
+    top: 40px;
+    background: rgb(241, 34, 34);
     border-radius: 100px 100px 0 0;
 }
 #no2::before{
     transform: rotateZ(-45deg);
     left:67px;
-    top: 10px;
 }
 #no2::after{
     transform: rotateZ(45deg);
     left:96px;
-    top: 10px;
 }
 
 @keyframes ani{
