@@ -15,10 +15,26 @@
             border-radius: 10px;
             padding: 0 5px;
         }
+        #dis,#dis1,.txt{
+            width: 100px;
+            height: 100px;
+            background-color: Pink;
+        }
+        #dis1{
+            background-color: yellow;
+        }
+        .txt{
+            background-color: orange;
+        }
+        .current{
+            background-color: #CC66CC;
+        }
+        .box{
+           color: pink;
+        }
     </style>
 </head>
 <body>
-<<<<<<< HEAD
         <div class="box">现在是北京时间：</div>
         <div class="dv">
             <span id="year" class="hour"></span>
@@ -28,11 +44,11 @@
             <span id="minute" class="hour"></span>
             <span id="seconds" class="hour minute"></span>
         </div></br>
-        <input type="button" value="按钮1" id="btn1"> </br>
+        <input type="button" value="女孩" id="btn1"> </br>
         <input type="button" value="开关灯" id="btn2"></br>
         <input type="button" value="提交" id="btn3">
         <input type="text" value="" id="txt"></br>
-        <input type="button" value="按钮4" id="btn4">
+        <input type="button" value="显示日期" id="btn4">
         <input type="text" value="" id="txt1"></br>
 
         <select name="" id="pro" onchange="getCitys()">
@@ -41,12 +57,14 @@
             <option value= 2 >安徽</option>
         </select>
         <select name="" id="city" >
-        </select>
-        
+        </select> 
+        <div id="dis">禁止选取禁止选取</div>
+        <div id="dis1">禁止复制禁止复制</div>
+        <div class="txt">鼠标在上时，背景颜色修改为#CC66CC</div>
     <script>
         // //   一、 给定一个字符串例如:
         // // “abaasdffggghhjjkkgfddsssss3444343”;问题如下: 
-        var str = "abasdfggghhjjgdsss3443";
+        var str = "abasdfggghhjjgdsss33";
         // 1、 字符串的字节长度 
         console.log(str.length);
         // 2、 取出指定位置的字符，如:0,3,5,9等 
@@ -207,15 +225,15 @@
             // 四、
             // 1、 在打开页面时弹出一个确认对话框
             // 2、 显示:“你确定继续浏览吗,”。如果用户点击确定， 
-            // var num = confirm('你确定继续浏览吗');
-            // if(num == true){
-            //     // 则用alert显示信息“欢迎光临～”;
-            //     alert("欢迎光临～");
-            // }else{
-            //     // 若用户点击取消，则用alert显示信息“欢迎再来～”并使用window.close 关闭页面
-            //     alert("欢迎再来～")
-            //     window.close();
-            // }
+            var num = confirm('你确定继续浏览吗');
+            if(num == true){
+                // 则用alert显示信息“欢迎光临～”;
+                alert("欢迎光临～");
+            }else{
+                // 若用户点击取消，则用alert显示信息“欢迎再来～”并使用window.close 关闭页面
+                alert("欢迎再来～")
+                window.close();
+            }
 
             // 五、
             // 1、 使用循环语句和document.write，依次以h1~h6的6级标题格式在页面中输出6行“欢迎 光临”。
@@ -271,24 +289,46 @@
             console.log('您刚才所按下的按键为:' + e.keyCode);
         }
 // 2、 在页面中禁止右键的使用，并在用户点击鼠标右键时使用alert弹出提示
-        
+        document.onmousedown = click;
+        function click(){
+            if(event.button == 2){
+                alert("禁止使用右键")
+            }
+        }   
 // 3、 在页面中使用onselectstart禁止选择操作，并在用户进行选择时使用alert弹出提示信息: 
 // “禁止选取～”。 
+        var dis = document.getElementById("dis")
+        // console.log(dis)
+        dis.onselectstart = function(){
+            alert("禁止选取～");
+           
+        }
 // 4、 在页面中使用oncopy禁止复制操作，并在用户进行复制时使用alert弹出提示信息:“禁 
 // 止选取～”。 
+        document.getElementById("dis1").oncopy = function () {
+            alert("禁止复制~")
+        };
+         
 // 5、 对页面中txt的div按以下要求设置鼠标事件:鼠标在上时，背景颜色修改为#CC66CC，
-
+            var txt = document.getElementsByClassName("txt")[0];
+            txt.onmouseover = function(){
+                this.className = "txt current"
+            }
+            txt.onmouseleave = function(){
+                this.className = "txt"
+            }
         // 七
-        // 1、页面上有一个按钮，点击能弹出一个对话框询问“请问你是女孩吗,”;如果选择确定，则显示“太好了～”，否则显示“没劲”
-                // var btn1 = document.querySelector("#btn1");
-                // btn1.onclick = function(){
-                //     var num = confirm('请问你是女孩吗');
-                //     if(num === true){
-                //         alert("太好了~");
-                //     }else{
-                //         alert("没劲");
-                //     }
-                // }
+        // 1、页面上有一个按钮，点击能弹出一个对话框询问“请问你是女孩吗
+        // ,”;如果选择确定，则显示“太好了～”，否则显示“没劲”
+                var btn1 = document.querySelector("#btn1");
+                btn1.onclick = function(){
+                    var num = confirm('请问你是女孩吗');
+                    if(num === true){
+                        alert("太好了~");
+                    }else{
+                        alert("没劲");
+                    }
+                }
         // 2、页面上有一个按钮，点击后能让网页的背景不停变色 
                 var btn2 = document.querySelector("#btn2");
                 btn2.onclick = function(){
@@ -320,7 +360,7 @@
                 var hour = date.getHours();
                 var minute = date.getMinutes();
                 var second = date.getSeconds();
-                 return year + "-" + month.toString().padStart(2,"0") + "-" + dates.toString().padStart(2,"0") + "-" + hour.toString().padStart(2,"0") + ":" + minute.toString().padStart(2,"0") + ":" + second.toString().padStart(2,"0");
+                 return year + "-" + month.toString().padStart(2,"0") + "-" + dates.toString().padStart(2,"0") + hour.toString().padStart(2,"0") + ":" + minute.toString().padStart(2,"0") + ":" + second.toString().padStart(2,"0");
             }
         var btn4 = document.querySelector("#btn4");
         var txt1 = document.querySelector("#txt1");
@@ -330,8 +370,5 @@
 
     </script>
     
-=======
-    jyc
->>>>>>> 82197010b175a2d869be22270512d5ecf6f8785d
 </body>
 </html>
