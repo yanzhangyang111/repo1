@@ -1,0 +1,24 @@
+
+body{
+    overflow: hidden;
+}
+p{
+    padding: 3px 5px;
+    white-space:nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#txt{
+    float: left;
+    width: 50%;
+    height: 50px;
+    font-size: 32px;
+    border: 1px solid #f00;
+}
+#btn-dm{
+    float: left;
+    width: 50%;
+    height: 50px;
+    font-size: 32px;
+    text-align: center;
+}
