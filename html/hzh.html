@@ -72,9 +72,17 @@
             console.log("当前字符串是：" + str_test1);
             console.log("出现次数最多的字符是：" + charMax + "，出现次数是：" + numMax + "。");
             // 7、 遍历字符串，并将遍历出的字符两头添加符号“@”输出至当前的文档页
-            for (var i = 0, len = str_test1.length; i < len; i++) {
-                str_test1.charAt(i);
+            // var newStr = "";
+            // for (var i = 0, len = str_test1.length; i < len; i++) {
+            //     newStr += "@" + str_test1.charAt(i) + "@";
+            // }
+            // document.write(newStr); // 拼接字符串耗费性能
+            var newArr1 = str_test1.split("");
+            var newArr2 = [];
+            for (var i = 0, len = newArr1.length; i < len; i++) {
+                newArr2.push("@" + newArr1[i] + "@");
             }
+            document.write(newArr2.join(""));
         })();
         // js练习题编程二
         // 二、 根据当前日期进行以下方面的处理:
@@ -88,7 +96,7 @@
         // 注:你若觉得分的不够细，可以将时间段划分的更细一些。
         // 3、 计算当前时间向前、向后的日期，并取出是星期几。 （扩展）
         (function () {
-
+            
         })();
     </script>
 </body>
