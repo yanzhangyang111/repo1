@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -7,593 +7,364 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        
-        .cycle-outer {
-            width: 534px;
-            height: 320px;
-            position: absolute;
-            /* background-color: cyan; */
-            margin: 100px 100px;
-            animation: run 10s linear infinite;
-        }
-        
-        @keyframes run {
-            from {
-                transform: translate(0);
-            }
-            to {
-                transform: translate(1000px, 0);
-            }
-        }
-        
-        .front-wheel-frame {
-            background: #5E999B;
-            width: 8px;
-            height: 180px;
-            position: absolute;
-            z-index: 2;
-            transform: rotate(-25deg);
-            top: 27px;
-            right: 162px;
-        }
-        
-        .top-frame {
-            background: #5E999B;
-            width: 180px;
-            height: 8px;
-            position: absolute;
-            z-index: 2;
-            top: 82px;
-            left: 171px;
-            transform: rotate(-8deg);
-        }
-        
-        .front-frame {
-            background: #5E999B;
-            width: 8px;
-            height: 160px;
-            position: absolute;
-            z-index: 2;
-            transform: rotate(41deg);
-            top: 62px;
-            left: 296px;
-        }
-        
-        .center-frame {
-            background: #5E999B;
-            width: 8px;
-            height: 205px;
-            position: absolute;
-            z-index: 2;
-            transform: rotate(-33deg);
-            top: 28px;
-            left: 191px;
-        }
-        
-        .back-frame {
-            background: #5E999B;
-            width: 8px;
-            height: 121px;
-            position: absolute;
-            z-index: 2;
-            transform: rotate(39deg);
-            top: 84px;
-            left: 128px;
-        }
-        
-        .bottom-frame {
-            background: #5E999B;
-            width: 142px;
-            height: 8px;
-            position: absolute;
-            z-index: 2;
-            top: 199px;
-            left: 100px;
-        }
-        
-        .handlebar-front {
-            width: 60px;
-            height: 8px;
-            background: #5E999B;
-            z-index: 2;
-            position: absolute;
-            top: 33px;
-            left: 326px;
-            border-radius: 3px 0 0 3px;
-        }
-        
-        .handlebar-curve {
-            position: absolute;
-            top: 33px;
-            left: 362px;
-            width: 40px;
-            height: 40px;
-            border: 8px solid #666;
-            border-radius: 0 100% 100% 100%;
-            border-left: 8px solid transparent;
-        }
-        
-        .bottle-holder {
-            width: 20px;
-            height: 36px;
-            background: #daeded;
-            border: 3px solid #5E999B;
-            position: absolute;
-            top: 51px;
-            left: -25px;
-        }
-        
-        .bottle-holder:after {
-            width: 20px;
-            height: 3px;
-            content: "";
-            background: #5E999B;
-            position: absolute;
-            top: 22px;
-            left: 0;
-        }
-        
-        .bottle-holder::before {
-            background-color: #daeded;
-            width: 18px;
-            height: 10px;
-            border-radius: 30% / 100%;
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-            content: "";
-            position: absolute;
-            margin-top: -13px;
-            border: 1px solid #98baba;
-        }
-        
-        .bottle-holder>span {
-            position: absolute;
-            width: 9px;
-            height: 4px;
-            background: #666;
-            top: -17px;
-            left: 5px;
-        }
-        
-        .seat {
-            width: 50px;
-            height: 10px;
-            background: #666;
-            border-radius: 44%;
-            position: absolute;
-            top: 39px;
-            left: 128px;
-        }
-        
-        .seat>span {
-            width: 32px;
-            height: 19px;
-            background: #666;
-            border-radius: 100%;
-            position: absolute;
-            margin: 1px 0 0 -22px;
-            transform: rotate(-11deg);
-        }
-        
-        .seat::after {
-            width: 0px;
-            height: 0px;
-            border-style: solid;
-            border-width: 0 40px 16px 40px;
-            border-color: transparent transparent #666 transparent;
-            content: "";
-            position: absolute;
-            z-index: 3;
-            transform: rotate(-12deg);
-            position: absolute;
-            border-radius: 100%;
-            margin: 0 0 0 -26px;
-        }
-        
-        .seat:before {
-            width: 0px;
-            height: 0px;
-            border-style: solid;
-            border-width: 0 40px 16px 40px;
-            border-color: transparent transparent #666 transparent;
-            content: "";
-            position: absolute;
-            z-index: 3;
-            transform: rotate(179deg);
-            position: absolute;
-            border-radius: 100%;
-            margin: 0 0 0 -26px;
-        }
-        
-        .cycle-wheel-outer {
-            background: transparent;
-            border: 5px solid #aaa;
-            border-radius: 50%;
-            width: 190px;
-            height: 190px;
-            position: absolute;
-            margin-top: 100px;
-            margin-left: -9px;
-            animation: wheel-rotate 2s linear infinite;
-        }
-        
-        .cycle-wheel-outer:after {
-            background: transparent;
-            border: 4px solid #EF9058;
-            border-radius: 50%;
-            width: 176px;
-            height: 176px;
-            position: absolute;
-            margin: 3px;
-            content: "";
-        }
-        
-        ul {
-            list-style: none;
-        }
-        
-        .spoke {
-            position: absolute;
-            width: 1px;
+        .showtime {
+            width: 500px;
             height: 200px;
-            background: #ccc;
-            margin: -5px 0 0 95px;
-            z-index: 0;
+            line-height: 200px;
+            text-align: center;
+            font-size: 100px;
+            border: 1px solid cyan;
+            background-color: cyan;
         }
         
-        ul li:nth-of-type(2) {
-            transform: rotate(30deg);
+        #txt,
+        #select {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            overflow: hidden;
         }
         
-        ul li:nth-of-type(3) {
-            transform: rotate(60deg);
+        #copy,
+        #unable {
+            width: 200px;
+            height: 200px;
+            background-color: purple;
         }
         
-        ul li:nth-of-type(4) {
-            transform: rotate(90deg);
-        }
-        
-        ul li:nth-of-type(5) {
-            transform: rotate(120deg);
-        }
-        
-        ul li:nth-of-type(6) {
-            transform: rotate(150deg);
-        }
-        
-        .inner-disc {
-            background: #666;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            position: absolute;
-            left: 50%;
-            margin: -10px 0 0 -10px;
-            top: 50%;
-        }
-        
-        .inner-disc-2 {
-            background: transparent;
-            width: 6px;
-            height: 6px;
-            border: 2px solid #FFF;
-            border-radius: 50%;
-            position: absolute;
-            left: 50%;
-            /* margin: -5px 0 0 -5px;
-             */
-            transform: translate(-50%, -50%);
-            top: 50%;
-        }
-        
-        .inner-disc-2::after {
-            content: "";
-            background: transparent;
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            position: absolute;
-            left: 50%;
-            margin: -13px 0 0 -13px;
-            top: 50%;
-            border: 4px dotted #666;
-        }
-        
-        .cycle-wheel-font {
-            position: absolute;
-            right: 218px;
-            top: 0;
-        }
-        
-        
-        
-        .cycle-wheel-font .inner-disc-2::after {
-            content: '';
-            border: none;
-        }
-        
-        .chain-rotation {
-            position: absolute;
-            z-index: 16;
-        }
-        
-        .outer-axle {
-            height: 70px;
-            width: 70px;
-            border-radius: 50%;
-            background: transparent;
-            border: 5px solid #666;
-            position: absolute;
-            margin: 165px 0 0 208px;
-            z-index: 3;
-        }
-        
-        .outer-axle:after {
-            content: "";
-            height: 74px;
-            width: 74px;
-            border-radius: 50%;
-            background: transparent;
-            border: 5px dotted #666;
-            margin: -7px;
-            position: absolute;
-            z-index: 3;
-            animation: wheel-rotate 2s linear infinite;
-        }
-        
-        .chain-disc-outer {
-            background: #FFF;
-            width: 22px;
-            height: 22px;
-            border: 5px solid #666;
-            border-radius: 50%;
-            position: absolute;
-            margin: 189px 0 0 232px;
-            z-index: 3;
-            content: "";
-        }
-        
-        .chain-up {
-            background-size: 8px 2px;
-            background-position: 0 0, 30px 30px;
-            width: 155px;
-            height: 4px;
-            position: absolute;
-            z-index: 9;
-            background: #EEE;
-            background-image: linear-gradient(90deg, #666 25%, transparent 25%, transparent 75%, #666 75%, #666);
-            background-size: 8px 2px;
-            transform: rotate(-9deg);
-            margin: 175px 0 0 87px;
-            animation: chainUp 2s linear infinite;
-        }
-        
-        .chain-bottom {
-            background-size: 8px 2px;
-            background-position: 0 0, 30px 30px;
-            width: 155px;
-            height: 4px;
-            position: absolute;
-            z-index: 9;
-            background: #EEE;
-            background-image: linear-gradient(90deg, #666 25%, transparent 25%, transparent 75%, #666 75%, #666);
-            background-size: 8px 2px;
-            -webkit-transform: rotate(9deg);
-            -moz-transform: rotate(9deg);
-            transform: rotate(13deg);
-            margin: 225px 0 0 82px;
-            animation: chainDown 2s linear infinite;
-        }
-        
-        .chain-rods {
-            height: 70px;
-            width: 6px;
-            background: #666;
-            position: absolute;
-            margin: 169px 0 0 245px;
-            z-index: 2;
-            animation: wheel-rotate 2s linear infinite;
-        }
-        
-        .chain-rods:before {
-            content: "";
-            height: 70px;
-            width: 6px;
-            background: #666;
-            position: absolute;
-            transform: rotate(120deg);
-        }
-        
-        .chain-rods:after {
-            content: "";
-            height: 70px;
-            width: 6px;
-            background: #666;
-            position: absolute;
-            transform: rotate(240deg);
-        }
-        
-        .chain-disc-inter {
-            background: #666;
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            position: absolute;
-            margin: 2px;
-            z-index: 4;
-        }
-        
-        .pedal-rod {
-            height: 120px;
-            width: 6px;
-            background: #666;
-            position: absolute;
-            margin: 142px 0 0 245px;
-            animation: wheel-rotate 2s linear infinite;
-        }
-        
-        .pedal-rod:before {
-            width: 40px;
-            height: 10px;
-            background: #666;
-            position: absolute;
-            margin: 10px;
-            content: "";
-            margin: -7px -17px;
-            animation: pedal1 2s linear infinite;
-        }
-        
-        .pedal-rod:after {
-            width: 40px;
-            height: 10px;
-            background: #666;
-            position: absolute;
-            margin: 10px;
-            content: "";
-            margin: 119px -17px;
-            animation: pedal2 2s linear infinite;
-        }
-        
-        @keyframes chainUp {
-            0% {
-                background-position: 0 25%;
-            }
-            100% {
-                background-position: 100% 0;
-            }
-        }
-        
-        @keyframes chainDown {
-            0% {
-                background-position: 100% 0;
-            }
-            100% {
-                background-position: 0 25%;
-            }
-        }
-        
-        @keyframes pedal1 {
-            0% {
-                transform: rotate(00deg);
-            }
-            25% {
-                transform: rotate(-140deg);
-            }
-            50% {
-                transform: rotate(-180deg);
-            }
-            75% {
-                transform: rotate(-240deg);
-            }
-            100% {
-                transform: rotate(-360deg);
-            }
-        }
-        
-        @keyframes pedal2 {
-            0% {
-                transform: rotate(00deg);
-            }
-            25% {
-                transform: rotate(-60deg);
-            }
-            50% {
-                transform: rotate(-180deg);
-            }
-            75% {
-                transform: rotate(-340deg);
-            }
-            100% {
-                transform: rotate(-360deg);
-            }
-        }
-        
-        @keyframes wheel-rotate {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
+        #qianghua {
+            display: block;
+            width: 230px;
+            height: 40px;
+            background-color: cyan;
+            text-decoration: none;
+            color: cornflowerblue;
+            line-height: 40px;
+            text-align: center;
         }
     </style>
 </head>
 
 <body>
-    <div class="cycle-outer">
-        <div class="cycle-wrapper">
-            <!-- ���� -->
-            <div class="cycle_body">
-                <div class="front-wheel-frame"></div>
-                <div class="top-frame"></div>
-                <div class="front-frame">
-                    <div class="bottle-holder">
-                        <span></span>
-                    </div>
-                </div>
-                <div class="center-frame"></div>
-                <div class="back-frame"></div>
-                <div class="bottom-frame"></div>
-                <div class="handlebar-front"></div>
-                <div class="handlebar-curve"></div>
-                <div class="seat"><span></span></div>
-            </div>
-            <!-- ���� -->
-            <div class="cycle-wheel       cycle-wheel-back">
-                <div class="cycle-wheel-outer">
-                    <div class="cycle-wheel-inner">
-                        <div class="cycle-wheel-inner-padding">
-                            <ul class="spoke-container">
-                                <li class="spoke"></li>
-                                <li class="spoke"></li>
-                                <li class="spoke"></li>
-                                <li class="spoke"></li>
-                                <li class="spoke"></li>
-                                <li class="spoke"></li>
-                            </ul>
-                            <div class="inner-disc"></div>
-                            <div class="inner-disc-2"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- ǰ�� -->
+    <script>
+        // 一、 给定一个字符串例如:
+        var str = "abcabcdec";
+        //   abcabcde; 问题如下:
+        //   1、 字符串的字节长度
+        var len = str.length;
+        //   2、 取出指定位置的字符，如: 0, 3, 5, 9等
+        var str_sub = str.charAt(3);
+        // console.log(str_sub);
+        //   3、 查找指定字符是否在以上字符串中存在，如: i，c ，b等
+        var index = str.indexOf('a');
+        // console.log(index);
+        //   4、 替换指定的字符，如: g替换为22, ss替换为b等操作方法
+        function replaceChar(str, char, targetChar) {
+            while (str.indexOf(char) !== -1) {
+                str = str.replace(char, targetChar);
+            }
+            return str;
+        }
+        // console.log(replaceChar(str, 'g', '22'));
+        //   5、 截取指定开始位置到结束位置的字符串，如: 取得1 - 5的字符串
+        var sub_str = str.substr(1, 5);
+        // console.log(sub_str);
+        //   6、 找出以上字符串中出现次数最多的字符和出现的次数
+        //方法一
+        var max = 0;
+        var c = null;
 
-            <div class="cycle-wheel       cycle-wheel-font">
-                <div class="cycle-wheel-outer">
-                    <div class="cycle-wheel-inner">
-                        <div class="cycle-wheel-inner-padding">
-                            <ul class="spoke-container">
-                                <li class="spoke"></li>
-                                <li class="spoke"></li>
-                                <li class="spoke"></li>
-                                <li class="spoke"></li>
-                                <li class="spoke"></li>
-                                <li class="spoke"></li>
-                            </ul>
-                            <div class="inner-disc"></div>
-                            <div class="inner-disc-2"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- ���� -->
-            <div class="chain-rotation">
-                <div class="outer-axle"></div>
-                <div class="chain-disc-outer">
-                    <div class="chain-disc-inter"></div>
-                </div>
-                <div class="chain-up"></div>
-                <div class="chain-bottom"></div>
-                <div class="chain-rods"></div>
-                <div class="pedal-rod"></div>
-            </div>
-        </div>
+        function find(str) {
+            while (str) {
+                var char = str.charAt(0);
+                var arr = str.split(char);
+                // str = arr.join('')
+                var count = str.length - (str = arr.join('')).length;
+                if (count > max) {
+                    c = char;
+                    max = count;
+                }
+            }
+
+            return {
+                'char': c,
+                'max': max
+            }
+        }
+        // console.log(find(str));
+        //方法二   对象
+        function find(str) {
+            var o = {};
+            var c = null;
+            var max = 0;
+            for (var i = 0; i < str.length; i++) {
+                var char = str[i];
+                if (o[char]) {
+                    o[char] = ++o[char];
+                } else {
+                    o[char] = 1;
+                }
+                if (o[char] > max) {
+                    c = char;
+                    max = o[char];
+                }
+            }
+            return {
+                'char': c,
+                'max': max
+            }
+        }
+        // console.log(find(str));
+        //   7、 遍历字符串，并将遍历出的字符两头添加符号“@”输出至当前的文档页面。
+        for (var i = 0; i < str.length; i++) {
+            document.write('@' + str[i] + '@');
+        }
+    </script>
+    <script>
+        // 二、 根据当前日期进行以下方面的处理:
+        //   1、 取得日期的年份、月份、天、时、分、秒，并转换成大写日期格式
+        //   如: 2013年8月17日0时30分20秒
+        //   2、 根据日期的不同时间段，做问候语:
+        //   早上8: 00 - 12: 00 : “早上好～欢迎登陆系统”
+        //   中午12: 00 - 14: 00: “中午好～该休息了”
+        //   下午14: 00 - 18: 00: “下午好～欢迎登陆系统”
+        //   晚上19: 00 - 00: 00: “晚上好～XXXXXXXXX”
+        function getTime() {
+            var dateTime = new Date();
+            var year = dateTime.getFullYear();
+            var month = dateTime.getMonth() + 1;
+            var date = dateTime.getDate();
+            var hour = String(dateTime.getHours()).padStart(2, '0');
+            var minutes = String(dateTime.getMinutes()).padStart(2, '0');
+            var second = String(dateTime.getSeconds()).padStart(2, '0');
+            dateTime = year + '年' + month + '月' + date + '日' + hour + '时' + minutes + '分' + second + '秒';
+            if (hour >= 8 && hour <= 12) {
+                var word = '早上好～欢迎登陆系统';
+            } else if (hour >= 12 && hour <= 14) {
+                var word = '中午好～该休息了';
+            } else if (hour >= 14 && hour <= 18) {
+                var word = '下午好～欢迎登陆系统';
+            } else if (hour >= 19) {
+                var word = '晚上好～XXXXXXXXX';
+            }
+            return dateTime + '  ' + word;
+        }
+        // console.log(getTime());
+    </script>
+    <script>
+        // 计算当前时间向前、 向后的日期， 并取出是星期几
+        /* 
+         *day为正数时为向后的日期 为负数时为向前的日期
+         */
+        function backOrGo(dayNum) {
+            var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+            var dateTime = new Date().valueOf();
+            var lastTime = dateTime + dayNum * 24 * 60 * 60 * 1000;
+            lastDate = new Date(lastTime);
+            var year = lastDate.getFullYear();
+            var month = lastDate.getMonth() + 1;
+            var data = lastDate.getDate();
+            var day = arr[lastDate.getDay()];
+            return '目标日期为 ' + year + '年' + month + '月' + data + '日 ' + day;
+        }
+        console.log(backOrGo(-1));
+    </script>
+    <script>
+        // 函数调用， 建立两个函数， 一个函数是中学二次函数表达式的计算方法， 另一个函数是给定任意的20个x值， 调用前一个函数计算y对应的值， 并使用方式输出20个计算结果。
+        function erci(x) {
+            return 2 * Math.pow(x, 2) + 3 * x + 5;
+        }
+
+        function getNum() {
+            var numArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 0];
+            for (var i = 0; i < numArr.length; i++) {
+                var y = erci(numArr[i]);
+                console.log('(' + numArr[i] + ',' + y + ')');
+            }
+        }
+        // getNum();
+    </script>
+    <script>
+        // 使用二重循环打印9× 9 乘法表
+        var str = '';
+        for (var i = 1; i <= 9; i++) {
+            for (var j = 1; j <= i; j++) {
+                str += j + '×' + i + '=' + i * j + '\t';
+            }
+            str = str + '\n';
+        }
+        // console.log(str);
+    </script>
+    <br>
+    <select name="geov" id="geov">
+      <option value="0">省份</option>
+      <option value="1">北京</option>
+      <option value="2">南京</option>
+      <option value="3">西京</option>
+      <option value="4">东京</option>
+    </select>
+    <select name="" id="city">
+        <option value="">请选择</option>
+    </select>
+    <script>
+        // 使用JavaScript中变量定义省份及对应的城市， 应用Select标签对象， 实现二级级联的
+        var geov = document.getElementById('geov');
+        var city = document.getElementById('city');
+        var grovList = [];
+        grovList[0] = ['请选择'];
+        grovList[1] = ['北京东站', '北京西站', '北京南站', '北京北站'];
+        grovList[2] = ['南京东站', '北京西站', '北京南站', '北京北站'];
+        grovList[3] = ['西京东站', '西京西站', '西京南站', '西京北站'];
+        grovList[4] = ['东京东站', '东京西站', '东京南站', '东京北站'];
+        geov.onchange = function() {
+            city.innerText = '';
+            for (var i = 0; i < grovList[this.value].length; i++) {
+                var option = document.createElement('option');
+                option.innerText = grovList[this.value][i];
+                city.appendChild(option);
+            }
+        }
+    </script>
+    <!-- <script>
+        //  在打开页面时弹出一个确认对话框显示: “你确定继续浏览吗, ”。如果用户点击确定，
+        //  则用alert显示信息“欢迎光临～”; 若用户点击取消，则用alert显示信息“欢迎再来～”并使用window.close 关闭页面
+        var flag = confirm('你确定继续浏览么？');
+        if (flag) {
+            alert('欢迎光临～');
+        } else {
+            alert('欢迎再来～');
+            window.close();
+        }
+    </script> -->
+    <script>
+        // 使用循环语句和document.write， 依次以h1~h6的6级标题格式在页面中输出6行“ 欢迎 光临”
+        for (var i = 1; i <= 6; i++) {
+            document.write('<h' + i + '>欢迎 光临</h' + i + '>');
+        }
+    </script>
+    <div class="showtime" id="showTime">123</div>
+    <script>
+        //在页面中showtime的div中显示当前时间。格式如下: 每隔一秒刷新一次。
+        setInterval(timeDiv, 1000)
+        timeDiv();
+
+        function timeDiv() {
+            var time = new Date();
+            var hour = String(time.getHours()).padStart(2, '0');
+            var minutes = String(time.getMinutes()).padStart(2, '0');
+            var second = String(time.getSeconds()).padStart(2, '0');
+            var time = hour + ':' + minutes + ':' + second;
+            document.getElementById('showTime').innerText = time;
+        }
+    </script>
+    <script>
+        //使用onkeypress事件，在页面按下字符按键时，获取用户按下的按键编号，并在状态栏 
+        // 用以下格式显示:
+        // “您刚才所按下的按键为: „”
+        document.onkeypress = function(e) {
+            console.log('您刚才所按下的按键为:' + e.keyCode);
+        }
+    </script>
+    <div id="unable">此区域禁用右键 此区域禁用右键 此区域禁用右键
     </div>
+    <script>
+        // document.getElementById('unable').onmousedown = function(e) {
+        //     if (e.button == 2) {
+        //         alert('禁用右键');
+        //     }
+        // }
+        document.getElementById('unable').oncontextmenu = function(e) {
+            alert('禁用右键')
+            e.preventDefault();
+        }
+    </script>
+    <div id="select">这是不可选取的内容这是不可选取的内容这是不可选取的内容这是不可选取的内容这是不可选取的内容这是不可选取的内容这是不可选取的内容这是不可内容</div>
+    <script>
+        //在页面中使用onselectstart禁止选择操作，并在用户进行选择时使用alert弹出提示信息:  “禁止选取～”
+        document.getElementById('select').onselectstart = function() {
+            alert('禁止选取～');
+        }
+    </script>
+    <div id="copy">此区域禁止复制此区域禁止复制此区域禁止复制此区域禁止复制</div>
+    <script>
+        // 在页面中使用oncopy禁止复制操作，并在用户进行复制时使用alert弹出提示信息: “禁止选取～”
+        document.getElementById('copy').oncopy = function() {
+            alert('禁止复制～');
+        }
+    </script>
+    <div id="txt">鼠标在上时，背景颜色修改为#CC66CC</div>
+    <script>
+        var bg = null;
+        // 对页面中txt的div按以下要求设置鼠标事件: 鼠标在上时，背景颜色修改为#CC66CC
+        document.getElementById('txt').onmouseenter = function() {
+            bg = this.style.backgroundColor;
+            this.style.backgroundColor = "#CC66CC";
+        }
+        document.getElementById('txt').onmouseleave = function() {
+            this.style.backgroundColor = bg;
+        }
+    </script>
+    <input type="button" value="女孩按钮" id="btn_gile"><br>
+    <script>
+        // 页面上有一个按钮，点击能弹出一个对话框询问“请问你是女孩吗,  如果选择确定，则显示“太好了～”，否则显示“没劲”
+        document.getElementById('btn_gile').onclick = function() {
+            var flag = confirm('请问你是女孩吗');
+            if (flag) {
+                alert('太好了~');
+            } else {
+                alert('没劲');
+            }
+        }
+    </script>
+    <input type="button" value="变色切换按钮" id="btn_color"><br>
+    <script>
+        //页面上有一个按钮，点击后能让网页的背景不停变色
+        //随机色
+        function randomColor() {
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            var color = 'rgb(' + r + ',' + g + ',' + b + ')';
+            return color;
+        }
+        var flag_color = true;
+        var timeId_color = null;
+        document.getElementById('btn_color').onclick = function() {
+            if (flag_color) {
+                timeId_color = setInterval(function() {
+                    document.body.style.backgroundColor = randomColor();
+                }, 1000);
+                flag_color = false;
+            } else {
+                clearInterval(timeId_color);
+                flag_color = true;
+            }
+        }
+    </script>
+    <input type="email" name="" id="email"><span></span> <br>
+    <input type="button" value="邮箱验证" id="btn_email"><br>
+    <script>
+        // 页面上有一个按钮及文本框， 在文本框中输入邮箱后， 点击按钮能进行验证， 要求不能为空， 且必须包含 @和.
+        document.getElementById('btn_email').onclick = function() {
+            var email = document.getElementById('email');
+            var reg = /\S+@\S+\./;
+            // var reg = /^\w+@\w+(\.\w+)+$/;
+            if (reg.test(email.value)) {
+                email.nextSibling.innerText = '成功';
+            } else {
+                email.nextSibling.innerText = '失败';
+            }
+        }
+    </script>
+    <input type="text" id="input_time" style="width:500px"><br>
+    <input type="button" value="系统时间" id="btn_time">
+    <script>
+        // 页面上有一个按钮， 点击后能在文本框内显示出当前系统时间
+        document.getElementById('btn_time').onclick = function() {
+            document.getElementById('input_time').value = new Date();
+        }
+    </script>
+    <a href="duan_强化.html" id="qianghua">强化题入口</a>
 </body>
 
 </html>

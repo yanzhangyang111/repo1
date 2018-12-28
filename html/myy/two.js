@@ -29,7 +29,7 @@ window.onload = function () {
 			return false;
 		}
 	}
-	//grettings(11);
+	grettings(11);
 	/**
 	 * 计算当前日期和前后日期
 	 */
