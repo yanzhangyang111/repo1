@@ -3,92 +3,43 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>立方体</title>
-    <style>
-        body {
-            perspective: 500px;
-            /* 视距 */
-        }
+    <title>作业</title>
 
-        div {
-            width: 200px;
-            height: 200px;
-        }
-
-        .box {
-            /*  1.盒子动: 给父盒子添加3d属性: transform-style: preserve-3d;
-                2.自己动: 给父盒子添加属性: perspective(视距)、perspective-origin(视角);*/
-            transform-style: preserve-3d;
-            /* 添加3d属性 */
-            /* 添加属性: perspective(视距)、perspective-origin(视角); */
-            /* perspective:500px;
-            perspective-origin: 0px 0px; */
-            position: relative;
-            margin: 200px auto;
-            transform: rotateX(-30deg) rotateY(-30deg) rotateZ(0deg);
-            transition: transform 2s;
-        }
-
-        .box:hover {
-            transform: rotateX(330deg) rotateY(330deg) rotateZ(360deg);
-        }
-
-        .box div {
-            font-size: 100px;
-            color: #FFF;
-            text-align: center;
-            line-height: 200px;
-            position: absolute;
-            opacity: .5;
-            border-radius: 50%;
-        }
-
-        .son1 {
-            background-color: red;
-            transform: translateZ(100px);
-        }
-
-        .son2 {
-            background-color: yellow;
-            /* transform: rotateX(-90deg) translateZ(100px); */
-            transform: translateY(100px) rotateX(-90deg);
-
-        }
-
-        .son3 {
-            background-color: blue;
-            /* transform: rotateY(-90deg) translateZ(100px); */
-            transform: translateX(-100px) rotateY(-90deg);
-        }
-
-        .son4 {
-            background-color: green;
-            /* transform: rotateY(90deg) translateZ(100px); */
-            transform: translateX(100px) rotateY(90deg);
-        }
-
-        .son5 {
-            background-color: cyan;
-            /* transform: rotateX(90deg) translateZ(100px); */
-            transform: translateY(-100px) rotateX(90deg);
-        }
-
-        .son6 {
-            background-color: purple;
-            transform: rotateY(180deg) translateZ(100px);
-        }
-    </style>
 </head>
 
 <body>
-    <div class="box">
-        <div class="son1">1</div>
-        <div class="son2">2</div>
-        <div class="son3">3</div>
-        <div class="son4">4</div>
-        <div class="son5">5</div>
-        <div class="son6">6</div>
-    </div>
+    <!-- 一、 给定一个字符串例如:
+    “abaasdffggghhjjkkgfddsssss3444343”;问题如下: 
+    1、 字符串的字节长度 
+    2、 取出指定位置的字符，如:0,3,5,9等 
+    3、 查找指定字符是否在以上字符串中存在，如:i，c ，b等 
+    4、 替换指定的字符，如:g替换为22,ss替换为b等操作方法 
+    5、 截取指定开始位置到结束位置的字符串，如:取得1-5的字符串 
+    6、 找出以上字符串中出现次数最多的字符和出现的次数 
+    7、 遍历字符串，并将遍历出的字符两头添加符号“@”输出至当前的文档页面。      -->
+
+    <script>
+        var str_test1 = "abaasdffggghhjjkkgfddsssss3444343";
+        // 1、 字符串的字节长度 
+        console.log(str_test1.length);
+        // 2、 取出指定位置的字符，如:0,3,5,9等 
+        console.log(str_test1.charAt(0));
+        console.log(str_test1.charAt(3));
+        console.log(str_test1.charAt(5));
+        console.log(str_test1.charAt(9));
+        // 3、 查找指定字符是否在以上字符串中存在，如:i，c ，b等 
+        for (var i = 0; i < str_test1.length; i++) {
+            if (str_test1.indexOf("i") == -1) {
+                console.log("字符i在以上字符串中不存在");
+            } else if (str_test1.indexOf("c") == -1) {
+                console.log("字符c在以上字符串中不存在");
+            } else if (str_test1.indexOf("b") == -1) {
+                console.log("字符b在以上字符串中不存在");
+            } else {
+
+            }
+        }
+    </script>
 </body>
 
 </html>
