@@ -2,43 +2,102 @@
 <html lang="zh-CN">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>作业</title>
-
 </head>
 
 <body>
-    <!-- 一、 给定一个字符串例如:
-    “abaasdffggghhjjkkgfddsssss3444343”;问题如下: 
-    1、 字符串的字节长度 
-    2、 取出指定位置的字符，如:0,3,5,9等 
-    3、 查找指定字符是否在以上字符串中存在，如:i，c ，b等 
-    4、 替换指定的字符，如:g替换为22,ss替换为b等操作方法 
-    5、 截取指定开始位置到结束位置的字符串，如:取得1-5的字符串 
-    6、 找出以上字符串中出现次数最多的字符和出现的次数 
-    7、 遍历字符串，并将遍历出的字符两头添加符号“@”输出至当前的文档页面。      -->
-
     <script>
-        var str_test1 = "abaasdffggghhjjkkgfddsssss3444343";
-        // 1、 字符串的字节长度 
-        console.log(str_test1.length);
-        // 2、 取出指定位置的字符，如:0,3,5,9等 
-        console.log(str_test1.charAt(0));
-        console.log(str_test1.charAt(3));
-        console.log(str_test1.charAt(5));
-        console.log(str_test1.charAt(9));
-        // 3、 查找指定字符是否在以上字符串中存在，如:i，c ，b等 
-        for (var i = 0; i < str_test1.length; i++) {
-            if (str_test1.indexOf("i") == -1) {
+        // js练习题编程一
+        (function () {
+            var str_test1 = "abaasdffggghhjjkkgfddsssss3444343";
+            // 1、 字符串的字节长度
+            console.log(str_test1.length);
+            // 2、 取出指定位置的字符，如:0,3,5,9等
+            console.log(str_test1.charAt(0));
+            console.log(str_test1.charAt(3));
+            console.log(str_test1.charAt(5));
+            console.log(str_test1.charAt(9));
+            // 3、 查找指定字符是否在以上字符串中存在，如:i，c ，b等
+            if (str_test1.indexOf("i") === -1) {
                 console.log("字符i在以上字符串中不存在");
-            } else if (str_test1.indexOf("c") == -1) {
+            } else {
+                console.log("字符i在以上字符串中存在");
+            }
+            if (str_test1.indexOf("c") === -1) {
                 console.log("字符c在以上字符串中不存在");
-            } else if (str_test1.indexOf("b") == -1) {
+            } else {
+                console.log("字符c在以上字符串中存在");
+            }
+            if (str_test1.indexOf("b") === -1) {
                 console.log("字符b在以上字符串中不存在");
             } else {
-
+                console.log("字符b在以上字符串中存在");
             }
-        }
+            // 4、 替换指定的字符，如:g替换为22,ss替换为b等操作方法 
+            console.log("替换前字符串：" + str_test1);
+            while (str_test1.indexOf("g") !== -1) {
+                str_test1 = str_test1.replace("g", "22");
+            }
+            console.log("替换后字符串1：" + str_test1);
+            while (str_test1.indexOf("ss") !== -1) {
+                str_test1 = str_test1.replace("ss", "b");
+            }
+            console.log("替换后字符串2：" + str_test1);
+            // 5、 截取指定开始位置到结束位置的字符串，如:取得1-5的字符串 
+            // 5.1、slice(start,end):截取开始到结束，结束取不到
+            // console.log(str_test1.slice(1,6));
+            // 5.2、substring(start,end):截取开始到结束，结束取不到，不能有负值
+            // console.log(str_test1.substring(1,6));
+            // 5/3、substr(start,length):截取从开始位置指定长度的字符串(最常用)
+            console.log("截取索引1-5的字符串：" + str_test1.substr(1, 5));
+            // 6、 找出以上字符串中出现次数最多的字符和出现的次数 
+            var obj_test1 = {}; // 定义一个对象记录出现的字符及其次数
+            for (var i = 0, len = str_test1.length; i < len; i++) {
+                var char = str_test1.charAt(i); // 取得当前索引的字符
+                if (obj_test1[char]) { // char可以视为 obj_obj_test1 的一个属性，
+                    obj_test1[char]++; // obj_obj_test1[char]就是它的属性值，
+                } else { // 给obj_obj_test1[char]赋值就相当于
+                    obj_test1[char] = 1; // 在obj中添加一个char属性，属性值为obj[char](简写)
+                }
+            }
+            var numMax = 0;
+            var charMax = 0;
+            for (var key in obj_test1) {
+                if (numMax < obj_test1[key]) {
+                    numMax = obj_test1[key];
+                    charMax = key;
+                }
+            }
+            console.log("当前字符串是：" + str_test1);
+            console.log("出现次数最多的字符是：" + charMax + "，出现次数是：" + numMax + "。");
+            // 7、 遍历字符串，并将遍历出的字符两头添加符号“@”输出至当前的文档页
+            // var newStr = "";
+            // for (var i = 0, len = str_test1.length; i < len; i++) {
+            //     newStr += "@" + str_test1.charAt(i) + "@";
+            // }
+            // document.write(newStr); // 拼接字符串耗费性能
+            var newArr1 = str_test1.split("");
+            var newArr2 = [];
+            for (var i = 0, len = newArr1.length; i < len; i++) {
+                newArr2.push("@" + newArr1[i] + "@");
+            }
+            document.write(newArr2.join(""));
+        })();
+        // js练习题编程二
+        // 二、 根据当前日期进行以下方面的处理:
+        // 1、 取得日期的年份、月份、天、时、分、秒，并转换成大写日期格式
+        // 如:2013年8月17日0时30分20秒
+        // 2、 根据日期的不同时间段，做问候语:
+        // 早上8:00-12:00 :“早上好～欢迎登陆系统”
+        // 中午12:00-14:00:“中午好～该休息了”
+        // 下午14:00-18:00:“下午好～欢迎登陆系统”
+        // 晚上19:00-00:00:“晚上好～XXXXXXXXX”
+        // 注:你若觉得分的不够细，可以将时间段划分的更细一些。
+        // 3、 计算当前时间向前、向后的日期，并取出是星期几。 （扩展）
+        (function () {
+            
+        })();
     </script>
 </body>
 
