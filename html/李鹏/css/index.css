@@ -22,3 +22,14 @@ p{
     font-size: 32px;
     text-align: center;
 }
+
+#homework{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 50%;
+    height: 50%;
+    transform:translate(-50%,-50%);
+    border: 1px solid #000;
+    display:flex;
+}
