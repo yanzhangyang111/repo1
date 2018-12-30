@@ -17,26 +17,7 @@ var money = document.querySelector("#money");
 var flag = false;//控制元素是否生成，和判断游戏是否结束
 var moveflag = true;//移动开关
 var arr = [];
-var moneyTimer;
-money.onmouseover = function () {
-    moneyTimer = setInterval(function () {
-        var r = Tools.getRandom(0, 255);
-        var g = Tools.getRandom(0, 255);
-        var b = Tools.getRandom(0, 255);
-        money.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
-    }, 30);
-}
-money.onmouseout = function () {
-    clearInterval(moneyTimer);
-    money.style.backgroundColor = "rgb(221,221,221)";
-}
-money.onclick = function () {
-    for (var i = 0; i < arr.length; i++) {
-        arr[i].div.onclick = function () {
-            this.remove();
-        }.bind(arr[i]);
-    }
-}
+
 /*********数字对象**********
  *  属性：
  *      位置：
