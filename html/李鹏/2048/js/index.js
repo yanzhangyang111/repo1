@@ -95,7 +95,7 @@ var count = 0;
             }
         }
     }
-
+    
     Num.prototype.move = function (k) {
         var ele = null;
         var that = this;
@@ -106,10 +106,19 @@ var count = 0;
                 }
                 if (ele = Tools.find(this.x - 1, this.y)) {
                     if (ele.num == this.num) {
+                        var countele = 0;
+                        for (var i = 0; i < arr.length; i++) {
+                            if (arr[i].x == ele.x && arr[i].y == ele.y) {
+                                countele++;
+                            }
+                        }
+                        if (countele == 2) {
+                            return;
+                        }
+                        this.num *= 2;
                         Tools.ani(this.div, 37, ((this.x - 1) * 110 + 10), function () {
                             sum.innerText = parseInt(sum.innerText) + ele.num * 2;
                             ele.remove();
-                            this.num *= 2;
                             $(this.div).text(this.num * 2);
                             this.changeColor();
                             this.div.style.backgroundColor = this.color;
@@ -135,10 +144,19 @@ var count = 0;
                 if (ele = Tools.find(this.x, this.y - 1)) {
 
                     if (ele.num == this.num) {
+                        var countele = 0;
+                        for (var i = 0; i < arr.length; i++) {
+                            if (arr[i].x == ele.x && arr[i].y == ele.y) {
+                                countele++;
+                            }
+                        }
+                        if (countele == 2) {
+                            return;
+                        }
+                        this.num *= 2;
                         Tools.ani(this.div, 38, ((this.y - 1) * 110 + 10), function () {
                             sum.innerText = parseInt(sum.innerText) + ele.num * 2;
                             ele.remove();
-                            this.num *= 2;
                             $(this.div).text(this.num * 2);
                             this.changeColor();
                             this.div.style.backgroundColor = this.color;
@@ -163,10 +181,19 @@ var count = 0;
                 }
                 if (ele = Tools.find(this.x + 1, this.y)) {
                     if (ele.num == this.num) {
+                        var countele = 0;
+                        for (var i = 0; i < arr.length; i++) {
+                            if (arr[i].x == ele.x && arr[i].y == ele.y) {
+                                countele++;
+                            }
+                        }
+                        if (countele == 2) {
+                            return;
+                        }
+                        this.num *= 2;
                         Tools.ani(this.div, 39, ((this.x + 1) * 110 + 10), function () {
                             sum.innerText = parseInt(sum.innerText) + ele.num * 2;
                             ele.remove();
-                            this.num *= 2;
                             $(this.div).text(this.num * 2);
                             this.changeColor();
                             this.div.style.backgroundColor = this.color;
@@ -191,10 +218,19 @@ var count = 0;
                 }
                 if (ele = Tools.find(this.x, this.y + 1)) {
                     if (ele.num == this.num) {
+                        var countele = 0;
+                        for (var i = 0; i < arr.length; i++) {
+                            if (arr[i].x == ele.x && arr[i].y == ele.y) {
+                                countele++;
+                            }
+                        }
+                        if (countele == 2) {
+                            return;
+                        }
+                        this.num *= 2;
                         Tools.ani(this.div, 40, ((this.y + 1) * 110 + 10), function () {
                             sum.innerText = parseInt(sum.innerText) + ele.num * 2;
                             ele.remove();
-                            this.num *= 2;
                             $(this.div).text(this.num * 2);
                             this.changeColor();
                             this.div.style.backgroundColor = this.color;
@@ -314,13 +350,13 @@ var count = 0;
                         }
                         break;
                 }
-                setTimeout(function(){moveflag=true},200);
+                setTimeout(function () { moveflag = true }, 200);
             }
             if (flag) {
                 setTimeout(function () {
                     var n = new Num();
                     n.render();
-                }, 200)
+                }, 250)
                 flag = false;
             } else {
                 for (var i = 0; i < arr.length; i++) {
