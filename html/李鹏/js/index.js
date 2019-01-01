@@ -11,14 +11,17 @@
     w.Tools = Tools;
 })(window);
 
+// var now=new Date();
+// if(now.getHours())
+
 $(function () {
-    if (!sessionStorage.getItem("guest")) {
+    if (!localStorage.getItem("guest")) {
         do {
             //let作用域在此花括号，，while无法访问；
             var guest = prompt("请输入您的姓名：");
             var reg = new RegExp("^[\u4e00-\u9fa5]{2,3}$");
             if (reg.test(guest)) {
-                sessionStorage.setItem("guest", guest);
+                localStorage.setItem("guest", guest);
             }
         } while (!reg.test(guest));
 
@@ -36,7 +39,7 @@ $(function () {
                     location.href = study === "1" ? "http://localhost:8080/%E4%BB%93%E5%BA%93/html/%E6%9D%8E%E9%B9%8F/%E6%89%AB%E9%9B%B7/saolei.html" : "http://localhost:8080/%E4%BB%93%E5%BA%93/html/%E6%9D%8E%E9%B9%8F/2048/2048.html";
                     break;
                 case "3":
-                    if(sessionStorage.getItem("guest")==="李鹏"){
+                    if(localStorage.getItem("guest")==="李鹏"){
                         alert("welcome back master");
                     }else{
                         alert("welcome to my humble abode!!!");
@@ -71,3 +74,23 @@ $(function () {
 
     });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*********************作业专区***************** 
+ *              ...es6的扩展运算符
+*/
+
+/* var homework=[
+    {question1:"js练习题编程一、 给定一个字符串例如:“abaasdffggghhjjkkgfddsssss3444343”;问题如下:1、 字符串的字节长度2、 取出指定位置的字符，如:0,3,5,9等3、 查找指定字符是否在以上字符串中存在，如:i，c ，b等4、 替换指定的字符，如:g替换为22,ss替换为b等操作方法5、 截取指定开始位置到结束位置的字符串，如:取得1-5的字符串6、 找出以上字符串中出现次数最多的字符和出现的次数7、 遍历字符串，并将遍历出的字符两头添加符号“@”输出至当前的文档页面。"}
+]; */
