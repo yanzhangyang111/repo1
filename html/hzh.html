@@ -5,6 +5,15 @@
     <meta charset="UTF-8" />
     <title>作业</title>
     <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            padding-left: 10px;
+        }
+
         .showtime {
             width: 450px;
             height: 150px;
@@ -47,17 +56,6 @@
             line-height: 200px;
             color: #FFF;
             background-color: powderblue;
-        }
-        
-        #qianghua {
-            display: block;
-            width: 230px;
-            height: 40px;
-            background-color: cyan;
-            text-decoration: none;
-            color: cornflowerblue;
-            line-height: 40px;
-            text-align: center;
         }
     </style>
 </head>
@@ -199,36 +197,33 @@
         }
         str = str + '\n';
     }
-    // console.log(str);
+    console.log(str);
     </script><br />
-    <select name="geov" id="geov">
-        <option value="0">省份</option>
-        <option value="1">北京</option>
-        <option value="2">南京</option>
-        <option value="3">西京</option>
-        <option value="4">东京</option>
+    <select name="" id="province">
+        <option value="0">请选择省份</option>
+        <option value="1">安徽</option>
+        <option value="2">江苏</option>
+        <option value="3">浙江</option>
     </select>
     <select name="" id="city">
-        <option value="">车站</option>
-    </select>
+        <option value="">请选择城市</option>
+    </select><br>
     <script>
-        // 使用JavaScript中变量定义省份及对应的城市， 应用Select标签对象， 实现二级级联的
-        var geov = document.getElementById('geov');
+        var province = document.getElementById('province');
         var city = document.getElementById('city');
-        var grovList = [];
-        grovList[0] = ['请选择'];
-        grovList[1] = ['北京东站', '北京西站', '北京南站', '北京北站'];
-        grovList[2] = ['南京东站', '南京西站', '南京南站', '南京北站'];
-        grovList[3] = ['西京东站', '西京西站', '西京南站', '西京北站'];
-        grovList[4] = ['东京东站', '东京西站', '东京南站', '东京北站'];
-        geov.onchange = function() {
+        var provinceList = [];
+        provinceList[0]=['请选择城市'];
+        provinceList[1]=['合肥','六安','安庆','阜阳'];
+        provinceList[2]=['南京','无锡','泰州','苏州'];
+        provinceList[3]=['杭州','京华','深圳','温州'];
+        province.onchange = function() {
             city.innerText = '';
-            for (var i = 0; i < grovList[this.value].length; i++) {
-                var option = document.createElement('option');
-                option.innerText = grovList[this.value][i];
-                city.appendChild(option);
-            }
-        }
+            for (var i = 0; i < provinceList[this.value].length; i++) {
+                    var option = document.createElement('option');
+                    option.innerText = provinceList[this.value][i];
+                    city.appendChild(option);
+                }
+        };
     </script>
     <script>
         //  在打开页面时弹出一个确认对话框显示: “你确定继续浏览吗, ”。如果用户点击确定，
