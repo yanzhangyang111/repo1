@@ -10,8 +10,6 @@
     <script>
         // js练习题编程一
         (function () {
-            document.write("-------------- js练习题编程一开始 -------------------<br />");
-            console.log("-------------- js练习题编程一开始 -------------------");
             var str_test1 = "abaasdffggghhjjkkgfddsssss3444343";
             // 1、 字符串的字节长度
             console.log(str_test1.length);
@@ -85,20 +83,13 @@
                 newArr2.push("@" + newArr1[i] + "@");
             }
             document.write(newArr2.join(""));
-            document.write("--------------- js练习题编程一结束 -------------------<br />");
-            console.log("---------------- js练习题编程一结束 -----------------");
         })();
         /* ----------------------------------------------------------------------------------------------*/
         (function () {
-            document.write("---------------- js练习题编程二开始 -------------------<br />");
-            console.log("---------------- js练习题编程二开始 -----------------");
             // 1、 取得日期的年份、月份、天、时、分、秒，并转换成大写日期格式 如:2013年8月17日0时30分20秒
             var date = new Date();
             var arrWeek = ["星期天", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六", ];
             var week = (date.getDay());
-            document.write("现在时间是: " + (date.getFullYear()) + "年" + (date.getMonth() + 1) + "月" + (date.getDate()) +
-                "日" + (date.getHours()) + "时" + (date.getMinutes()) + "分" + (date.getSeconds()) + "秒 " +
-                arrWeek[week] + "<br />");
             console.log("现在时间是: " + (date.getFullYear()) + "年" + (date.getMonth() + 1) + "月" + (date.getDate()) +
                 "日" + (date.getHours()) + "时" + (date.getMinutes()) + "分" + (date.getSeconds()) + "秒 " +
                 arrWeek[week]);
@@ -145,8 +136,6 @@
             //     } else {
             //         moveDay -= 28;
             //     }
-
-
             // } else { // moveDay >= 0
 
             // }
@@ -156,8 +145,7 @@
 
 
 
-            document.write("-------------- js练习题编程二结束 -------------------<br />");
-            console.log("---------------- js练习题编程二结束 -----------------");
+
         })();
     </script>
 </body>
