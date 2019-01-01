@@ -3,17 +3,16 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
         #topBar {
-            
             padding: 0 0 0 500px;
-            /* width: 100%; */
-            /* margin: 0 auto; */
-            height: 100px;
-            line-height: 100px;
+            margin: 10px auto;
+            width: 800px;
+            height: 100%;
+            line-height: 100%;
         }
         #topBar span {
             position: relative;
@@ -24,6 +23,7 @@
             text-align: center;
             background: gainsboro;
             margin-right: 35px;
+            margin-bottom: 20px;
         }
         #topBar span::after {
             cursor: pointer;
@@ -90,15 +90,49 @@
     ]
 
     // 1.  将data中数据添加到tbody中
-        
+            var tbody=document.getElementsByTagName("tbody")[0];
+            var arr=[];
+            for(var i=0;i<data.length;i++){
+                arr.push("<tr><td><input type='checkbox'></td><td>"+data[i].name+"</td><td>"+data[i].id+"</td><td>"+data[i].catagory+"</td><td>"+data[i].desc+"</td></tr>");
+            }
+            var str=arr.join("");
+           tbody.innerHTML=str;
+            
     // 2.   完成全选功能
-
+            var checkall=document.getElementById("checkbox-all");
+            var input=tbody.getElementsByTagName("input");
+            checkall.onclick=function(){
+                for(var i=0;i<input.length;i++){
+                    input[i].checked=this.checked;
+                } 
+            }
     // 3.   下面的input的checkbx控制全选
-
+            for(var i=0;i<input.length;i++){
+                input[i].onclick=function(){
+                    var flag=true;
+                    for(var j=0;j<input.length;j++){
+                        if(!input[j].checked){
+                            flag=false;
+                        }
+                    }
+                    checkall.checked=flag;
+                }
+            }
+    
     // 4.   将选择的那一行的名称，添加到topBar里
-
+            var topBar=document.getElementById("topBar");
+            for(var i=0;i<input.length;i++){
+                input[i].onclick=function(){
+                    if(this.checked){
+                        var name=this.parentNode.nextElementSibling.innerHTML;
+                        var span=document.createElement("span");
+                        topBar.appendChild(span);
+                        span.innerHTML=name;
+                    } 
+                }    
+            }
     // 5.   对topBar里的span增加删除功能
-
+            
     // 6.   删除span会将页面上的元素删掉，并将对应的input的checkbox置为false。
 </script>
 </html>
