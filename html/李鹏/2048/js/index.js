@@ -76,7 +76,7 @@ var count = 0;
             }
         }
     }
-    
+
     Num.prototype.move = function (k) {
         var ele = null;
         var that = this;
@@ -278,16 +278,12 @@ var count = 0;
         }
 
         function move(e) {
-            /* for(var i=0;i<arr.length;i++){
-                if(arr[i].num==1024){
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i].num == 1024) {
                     alert("厉害呀！！！");
                     return;
                 }
             }
-            if(arr.length>=17){
-                alert("你输了");
-                return;
-            } */
 
             if (moveflag) {
                 moveflag = false;
@@ -340,12 +336,12 @@ var count = 0;
                 }, 250)
                 flag = false;
             } else {
-                for (var i = 0; i < arr.length; i++) {
+                /* for (var i = 0; i < arr.length; i++) {
                     if (arr[i].num == 1024) {
                         alert("厉害呀！！！");
                         return;
                     }
-                }
+                } */
                 if (arr.length >= 16) {
                     if (!canplay()) {
                         alert("你输了");
