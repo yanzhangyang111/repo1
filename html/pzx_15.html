@@ -1,1 +1,106 @@
-突突突突突突拖拖拖拖拖拖拖拖拖拖拖拖拖拖hhhhhhhhhhhhhhhhhqqqqq
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        (function(){
+            //      一、 给定一个字符串例如:
+        // “abaasdffggghhjjkkgfddsssss3444343”;问题如下: 
+
+        // 1、 字符串的字节长度 
+        console.log("第一题"); 
+        var str = "abaasdffggghhjjkkgfddsssss3444343";
+        console.log(str.length);
+        // 2、 取出指定位置的字符，如:0,3,5,9等 
+        console.log(str[0]);
+        console.log(str[3]);
+        console.log(str[5]);
+        console.log(str[9]);
+        // 3、 查找指定字符是否在以上字符串中存在，如:i，c ，b等 
+        console.log(str.indexOf("i"));
+        console.log(str.indexOf("c"));
+        console.log(str.indexOf("b"));
+        // 4、 替换指定的字符，如:g替换为22,ss替换为b等操作方法
+        console.log(str.replace(/g/g, 22));
+        console.log(str.replace(/ss/g, "b"));
+        // 5、 截取指定开始位置到结束位置的字符串，如:取得1-5的字符串
+        console.log(str.substring(0, 5));
+        // 6、 s
+        console.log(str.charAt(3));
+        // 7、 遍历字符串，并将遍历出的字符两头添加符号“@”输出至当前的文档页面。 
+        for (var i = 0; i < str.length; i++) {
+            var p = str[i]
+            document.write("@" + p + "@<br>");
+        };
+        console.log("-----------------------");
+        }());
+        
+        
+       (function(){
+            // 二、 根据当前日期进行以下方面的处理:
+        console.log("第二题");       
+        // 1、 取得日期的年份、月份、天、时、分、秒，并转换成大写日期格式
+        // 如: 2013年8月17日0时30分20秒
+        var date = new Date();
+        var y = date.getFullYear()
+        var m = date.getMonth();
+        var d = date.getDay();
+        var h = date.getHours();
+        var m = date.getMinutes();
+        var s = date.getSeconds();
+        console.log(y+"年"+m+"月"+d+"日"+h+"时"+m+"分"+s+"秒");
+        
+        
+        // 2、 根据日期的不同时间段，做问候语:
+        var time = new Date();
+        var hour = time.getHours()
+        console.log(hour);
+        // 早上8: 00 - 12: 00 : “早上好～欢迎登陆系统”
+        if (hour>=12&&hour<14) {
+            alert("中午好～该休息了")
+        }
+         // 下午14: 00 - 18: 00: “下午好～欢迎登陆系统”
+        else if (hour>=14&&hour<=18) {
+            alert("下午好～欢迎登陆系统")
+        }
+        // 晚上19: 00 - 00: 00: “晚上好～XXXXXXXXX”
+        else if (hour>=19&&hour<=0) {
+            alert("晚上好～")
+        }
+        // 3、 计算当前时间向前、向后的日期，并取出是星期几。
+        var day = new Date();
+        var dd = day.getDate();
+        var mm = day.getMonth();
+        var font =dd-1;
+        var back = dd+1;
+        var week = date.getDay();
+        var x= week -1;
+        var y = week +1;
+        console.log("昨天是"+mm+"月"+font+"日"+"星期"+x);
+        console.log("明天是"+mm+"月"+back+"日"+"星期"+y);
+       }());
+        // 1、 函数调用，建立两个函数，一个函数是中学二次函数表达式的计算方法，
+                //另一个函数是给定任意的20个x值，调用前一个函数计算y对应的值，并使用方式输出20个计算结果。 
+                //（就是写两个函数，一个函数调用另一个函数）
+                function fn(){
+                    function func(){
+
+                    }
+                    func()
+                }
+                fn()
+       // 2、 使用二重循环打印9×9乘法表
+
+        
+    </script>
+</body>
+
+</html>
