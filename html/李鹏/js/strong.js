@@ -30,6 +30,12 @@ for (var i = 0, len = goods.length; i < len; i++) {
 }
 var checks = document.querySelectorAll("td>input");
 
+
+/**********
+ * 
+ * 使span与多选框对应，每次修改多选框直接调用此函数
+ * 
+ */
 function createspan() {
     for (var i = 0, len = checks.length; i < len; i++) {
         var cit = checks[i].parentNode.nextSibling.innerText;
@@ -49,7 +55,6 @@ function createspan() {
                     var t=this.innerText;
                     
                     this.remove();
-                    // createspan();
                     for(var i=0;i<goods.length;i++){
                         if(goods[i].name===t){
                             checks[i].checked=false;
@@ -69,6 +74,7 @@ function createspan() {
     }
 }
 
+/****全选功能****** */
 checkall.onclick = function () {
 
     for (var i = 0, len = checks.length; i < len; i++) {
@@ -78,6 +84,8 @@ checkall.onclick = function () {
     createspan();
 }
 
+
+/******单选控制全选****** */
 for (var i = 0, len = checks.length; i < len; i++) {
     checks[i].onclick = function () {
         var flag = true;
