@@ -79,7 +79,7 @@ $(function () {
 
     /********************作业部分******************* */
     var len = $("#homework>.homework-head").children().length;
-
+//头部table栏切换
     $("#homework>.homework-head>span").click(function (e) {
         $("#homework>.homework-head>span").removeClass("current");
         $(e.target).addClass("current");
@@ -87,6 +87,7 @@ $(function () {
         $("#homework>.homework-body>div").removeClass("show").eq(index).addClass("show");
 
     });
+// 第一题
     $(".homework-body > div:nth-of-type(1) > .answer").click(function () {
         /*  一、 给定一个字符串例如:
         “abaasdffggghhjjkkgfddsssss3444343”;问题如下: 
