@@ -1,3 +1,7 @@
 #no51 {
-    background-color: yellowgreen;
+    width: 1200px;
+    transform: skewX(-30deg);
+    background-color: purple;
+    color: #fff;
+    text-decoration: none;
 }
