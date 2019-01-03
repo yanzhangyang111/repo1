@@ -1,138 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        /* 表盘 */
-        .clock {
-            position: relative;
-            width: 300px;
-            height: 300px;
-            margin: 100px auto;
-            border-radius: 50%;
-            box-sizing: content-box;
-            border: 10px solid #ccc;
+        .links{
+           width: 400px;
+           height: 800px;
+           margin: auto;
         }
-        /* 刻度 */
-        .line {
-            position: absolute;
-            width: 10px;
-            height: 300px;
-            left: 50%;
-            top: 50%;
-            background-color: #ccc;
-        }
-        .line1 {
-            transform: translate(-50%, -50%) rotate(30deg);
-        }
-        .line2 {
-            transform: translate(-50%, -50%) rotate(60deg);
-        }
-        .line3 {
-            transform: translate(-50%, -50%) rotate(90deg);
-        }
-        .line4 {
-            transform: translate(-50%, -50%) rotate(120deg);
-        }
-        .line5 {
-            transform: translate(-50%, -50%) rotate(150deg);
-        }
-        .line6 {
-            transform: translate(-50%, -50%) rotate(180deg);
-        }
-        /* 遮罩层 */
-        .mask{
-            position: absolute;
-            width: 260px;
-            height: 260px;
-            background-color: #fff;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            margin: auto;
-            border-radius: 50%;
-        }
-        /* 指针 时针 */
-        .pointer1{
-            position: absolute;
-            width: 10px;
-            height: 60px;
-            background-color: red;          
-            left: 50%;
-            bottom: 50%;
-            transform: translate(-50%,0%);
-            transform-origin: center bottom;
-            animation: clockMove 43200 linear infinite;
-        }
-        /* 指针 分针 */
-        .pointer2{         
-            position: absolute;
-            width: 8px;
-            height: 70px;
-            background-color: green;          
-            left: 50%;
-            bottom: 50%;
-            transform: translate(-50%,0%);
-            transform-origin: center bottom;
-            animation: clockMove 3600s linear infinite;
-        }
-        /* 指针 秒针 */
-        .pointer3{
-            position: absolute;
-            width: 6px;
-            height: 80px;
-            background-color: black;          
-            left: 50%;
-            bottom: 50%;
-            transform: translate(-50%,0%);
-            transform-origin: center bottom;
-            animation: clockMove 60s infinite steps(60);
-        }
-        /* 圆心 */
-        .center{
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            margin: auto;
-            background-color: #12147a;
-
-        }
-        /* 动画 */
-        @keyframes clockMove{
-            from{
-                transform: rotate(0deg)
-            }
-            to{
-                transform: rotate(360deg)
-            }
+        .links p{
+            line-height: 20px;
+            text-align: center;
         }
     </style>
 </head>
-
 <body>
-    <div class="clock">
-        <div class="line line1"></div>
-        <div class="line line2"></div>
-        <div class="line line3"></div>
-        <div class="line line4"></div>
-        <div class="line line5"></div>
-        <div class="line line6"></div>
-        <div class="mask"></div>
-        <div class="pointer1"></div>    <!-- 时针 -->
-        <div class="pointer2"></div>    <!-- 分针 -->
-        <div class="pointer3"></div>    <!-- 秒针 -->
-        <div class="center"></div>      <!-- 圆心 -->
+    <div class="links">
+       <p><a href="../练习题/js题目代码/基础练习/第一题.html">给定一个字符串</a></p>
+       <p><a href="../练习题/js题目代码/基础练习/第二题.html">根据当前日期</a></p>
+       <p><a href="../练习题/js题目代码/基础练习/第三题.html">函数调用</a></p>
+       <p><a href="../练习题/js题目代码/基础练习/第四题.html">二重循环打印9×9乘法表</a></p>
+       <p><a href="../练习题/js题目代码/基础练习/第五题.html">二级级联的下拉菜单选中效果</a></p>
+       <p><a href="../练习题/js题目代码/基础练习/第六题.html">在打开页面时弹出一个确认对话框</a></p>
+       <p><a href="../练习题/js题目代码/基础练习/第七题.html">使用循环语句和document.write</a></p>
+       <p><a href="../练习题/js题目代码/基础练习/第八题.html">在页面中showtime的div中显示当前时间</a></p>
+       <p><a href="../练习题/js题目代码/基础练习/第九题.html">在页面按下字符按键时，获取用户按下的按键编号</a></p>
+       <p><a href="../练习题/js题目代码/基础练习/第十题.html">在页面中禁止右键的使用</a></p>
+       <p><a href="../练习题/js题目代码/基础练习/第十一题.html">在页面中使用onselectstart禁止选择操作</a></p>
+       <p><a href="../练习题/js题目代码/基础练习/第十二题.html">在页面中使用oncopy禁止复制操作</a></p>
+       <p><a href="../练习题/js题目代码/基础练习/第十三题.html">对页面中txt的div按以下要求设置鼠标事件</a></p>
+       <p><a href="../练习题/js题目代码/基础练习/第十四题.html">页面上有一个按钮，点击能弹出一个对话框</a></p>
+       <p><a href="../练习题/js题目代码/基础练习/第十五题.html">页面上有一个按钮，点击后能让网页的背景不停变色</a></p>
+       <p><a href="../练习题/js题目代码/基础练习/第十六题.html">页面上有一个按钮及文本框，在文本框中输入邮箱后，点击按钮能进行验证</a></p>
+       <p><a href="../练习题/js题目代码/基础练习/第十七题.html">页面上有一个按钮，点击后能在文本框内显示出当前系统时间</a></p>
     </div>
 </body>
-
 </html>
