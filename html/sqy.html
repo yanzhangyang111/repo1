@@ -6,9 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        .one,.two,.three,.four{
+            width: 100px;
+            height: 50px;
+            border: 1px solid red;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="one">禁止选取</div>
+    <div class="two">禁止使用右键</div>
+    <div class="three">禁止复制</div>
+    <div class="four">鼠标放上去变色</div>
     <input type="button" value="请问你是女孩吗" id="btn">
     <input type="button" value="点击变色" id="btn1">
     <input type="button" value="浏览网页" id="btn2"><br />
@@ -202,28 +213,31 @@
 
 
         // 2、 在页面中禁止右键的使用，并在用户点击鼠标右键时使用alert弹出提示
-        // document.onmousedown = function(e){
+        var two = document.querySelector(".two");
+        two.onmousedown = function(e){
         // console.log(e);
-        // if(e.which == 3){
-        //     alert("禁止使用右键");
-        // }
-        // }
+        if(e.which == 3){
+            alert("禁止使用右键");
+        }
+        }
         // 3、 在页面中使用onselectstart禁止选择操作，并在用户进行选择时使用alert弹出提示信息: 
         // “[i]”。 
-        document.onselectstart = function(e){
+        var one = document.querySelector(".one");
+        one.onselectstart = function(e){
             alert("禁止选取～");
         }
         // 4、 在页面中使用oncopy禁止复制操作，并在用户进行复制时使用alert弹出提示信息:“禁 
         // 止选取～”。
-        // document.oncopy = function(e){
-        //     e.returnValue = false;
-        //     alert("禁止选取～");
-        // }
+        var three = document.querySelector(".three");
+        three.oncopy = function(e){
+            e.returnValue = false;
+            alert("禁止选取～");
+        }
         // 5、对页面中的div按以下要求设置鼠标事件:鼠标在上时，背景颜色修改为#CC66CC， 
-        // var txt = document.getElementById("txt");
-        // txt.onmouseover = function(){
-        //     this.style.backgroundColor = "#CC66CC";
-        // }
+        var four = document.querySelector(".four");
+        four.onmouseover = function(){
+            this.style.backgroundColor = "#CC66CC";
+        }
 
         // 六 
         // 1、页面上有一个按钮，点击能弹出一个对话框询问“请问你是女孩吗,”;如果选择确定，则显示“太好了～”，否则显示“没劲” 
