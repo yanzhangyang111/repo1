@@ -14,6 +14,8 @@ var stage = Tools.id$("stage");
 var result = Tools.id$("result");
 var sum = document.querySelector("#result span");
 var money = document.querySelector("#money");
+var stop = document.querySelector("#stage>.stop");
+var winner = document.querySelector("#stage>.winner");
 var flag = false;//控制元素是否生成，和判断游戏是否结束
 var moveflag = true;//移动开关
 var arr = [];
@@ -278,12 +280,7 @@ var count = 0;
         }
 
         function move(e) {
-            for (var i = 0; i < arr.length; i++) {
-                if (arr[i].num == 1024) {
-                    alert("厉害呀！！！");
-                    return;
-                }
-            }
+
 
             if (moveflag) {
                 moveflag = false;
@@ -336,17 +333,21 @@ var count = 0;
                 }, 250)
                 flag = false;
             } else {
-                /* for (var i = 0; i < arr.length; i++) {
-                    if (arr[i].num == 1024) {
-                        alert("厉害呀！！！");
-                        return;
-                    }
-                } */
                 if (arr.length >= 16) {
                     if (!canplay()) {
+                        document.onkeydown = null;
                         alert("你输了");
                     }
 
+                    return;
+                }
+            }
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i].num == 1024) {
+                    setTimeout(function () {
+                        document.onkeydown = null;
+                        winner.style.display="block";
+                    }, 250);
                     return;
                 }
             }
