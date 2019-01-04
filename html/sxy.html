@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .wrapper{
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        border: 1px solid #000;
+        position: relative;
+    }
+   
+    </style>
+</head>
+
+<body>
+    <div id="wrapper" class="wrapper">
+        <ul>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+            <li>45612323256</li>
+        </ul>
+    </div>
+<span></span><i>年</i>
+<span></span><i>月</i>
+<span></span><i>日</i>
+<span></span><i>小时</i>
+<span></span><i>分钟</i>
+<span></span><i>秒</i>
+<span></span><i></i>
+</body>
+<script src="./js/iscroll.js"></script>
+<script type="text/javascript">
+    var myScroll = new IScroll('#wrapper', {
+        mouseWheel: true,
+        scrollbars: true,
+    });
+
+</script>
+<script>
+
+    // console.log(str.charAt(6));
+
+    // 3、 查找指定字符是否在以上字符串中存在，如:i，c ，b等 
+    // if (str.indexOf('c') == -1) {
+    //     console.log("y")
+    // } else {
+    //     console.log("n")
+    // }
+    // 4、 替换指定的字符，如:g替换为22,ss替换为b等操作方法 
+    // console.log(str.replace("g", 22))
+    // 5、 截取指定开始位置到结束位置的字符串，如:取得1-5的字符串 
+    // console.log(str.slice(0, 5))
+    // 6、 找出以上字符串中出现次数最多的字符和出现的次数 
+    // var json = {};
+
+    // for (var i = 0; i < str.length; i++) {
+    //     if (!json[str.charAt(i)]) {
+    //         json[str.charAt(i)] = 1
+    //     } else {
+    //         json[str.charAt(i)]++
+    //     }
+    // }
+    // console.log(json)
+    // var num = 0;
+    // var maxk
+    // for (var k in json) {
+    //     if (num < json[k]) {
+    //         num = json[k];
+    //         maxk = k;
+    //     }
+    // }
+    // console.log(num + "个" + maxk);
+
+
+
+
+
+    // 7、 遍历字符串，并将遍历出的字符两头添加符号“@”输出至当前的文档页面。 
+
+    // var str = "abaasdffggghhjjkkgfddsssss3444343";
+ 
+    // var b="";
+    // for (var i=0 ;i<str.length;i++){
+    //     b+=str[i]+"@";
+    // }
+    // console.log(b);
+    var spans=document.querySelectorAll("span");
+      
+        setInterval(function(){
+             var time= new Date();
+       
+       var y=time.getFullYear();
+       var m=time.getMonth()+1;
+       var d=time.getDay();
+       var h=time.getHours();
+       var f=time.getMinutes();
+       var s=time.getSeconds();
+            spans[0].innerText=y;
+            spans[1].innerText=m;
+            spans[2].innerText=d;
+            spans[3].innerText=h;
+            spans[4].innerText=f;
+            spans[5].innerText=s;
+            
+        },1000)
+ 
+        var time= new Date();
+       
+       var y=time.getFullYear();
+       var m=time.getMonth()+1;
+       var d=time.getDay();
+       var h=time.getHours();
+       var f=time.getMinutes();
+       var s=time.getSeconds();
+       if(h<8&&h>12){
+           alert("早上哈");
+       }else if(h<=12&&h>=14){
+        alert("中午好～该休息了")
+       }else if(h<=14&&h>=18){
+        alert("下午好～欢迎登陆系统")
+       }else{
+        alert("wans好～欢迎登陆系统")
+       }
+</script>
+
+</html>
