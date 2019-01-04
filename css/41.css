@@ -4,8 +4,12 @@
     background-color:hotpink;
     border: 3px solid skyblue;
      font-size: 50px;
-     color:springgreen;
-     text-decoration-line: none;
+     
+     
                       
                
-}          
+} 
+#no41 a{
+    text-decoration-line: none;
+    color:springgreen;
+}         
