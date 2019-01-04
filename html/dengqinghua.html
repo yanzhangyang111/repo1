@@ -117,6 +117,7 @@
 
     // }
     //设置全选的点击事件
+
     var topBar = document.querySelector("#topBar");
     checkboxall.onclick = function () {
         for (var i = 0; i < lists.length; i++) {
@@ -141,12 +142,12 @@
                 topBar.children[i].onclick = function () {
                     this.remove();
                     var index = this.getAttribute("index");
-                    for (var i = 0;i<lists.length;i++){
+                    for (var i = 0; i < lists.length; i++) {
                         lists[index].checked = false;
                     }
-                    for (var i = 0;i<lists.length;i++){
+                    for (var i = 0; i < lists.length; i++) {
                         var flag = true;
-                        if(!lists[i].checked){
+                        if (!lists[i].checked) {
                             flag = false;
                         }
                         checkboxall.checked = flag;
@@ -182,7 +183,23 @@
                     var index = this.getAttribute("index");
                     var aa = topBar.children[i].getAttribute("index");
                     if (aa == index) {
-                        topBar.children[i].remove();
+                        topBar.children[index].remove();
+                    }
+                }
+            }
+            for (var i = 0; i < topBar.children.length; i++) {
+                topBar.children[i].onclick = function () {
+                    this.remove();
+                    var index = this.getAttribute("index");
+                    for (var i = 0; i < lists.length; i++) {
+                        lists[index].checked = false;
+                    }
+                    for (var i = 0; i < lists.length; i++) {
+                        var flag = true;
+                        if (!lists[i].checked) {
+                            flag = false;
+                        }
+                        checkboxall.checked = flag;
                     }
                 }
             }
