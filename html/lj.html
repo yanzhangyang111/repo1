@@ -7,593 +7,494 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        
-        .cycle-outer {
-            width: 534px;
-            height: 320px;
-            position: absolute;
-            /* background-color: cyan; */
-            margin: 100px 100px;
-            animation: run 10s linear infinite;
-        }
-        
-        @keyframes run {
-            from {
-                transform: translate(0);
-            }
-            to {
-                transform: translate(1000px, 0);
-            }
-        }
-        
-        .front-wheel-frame {
-            background: #5E999B;
-            width: 8px;
-            height: 180px;
-            position: absolute;
-            z-index: 2;
-            transform: rotate(-25deg);
-            top: 27px;
-            right: 162px;
-        }
-        
-        .top-frame {
-            background: #5E999B;
-            width: 180px;
-            height: 8px;
-            position: absolute;
-            z-index: 2;
-            top: 82px;
-            left: 171px;
-            transform: rotate(-8deg);
-        }
-        
-        .front-frame {
-            background: #5E999B;
-            width: 8px;
-            height: 160px;
-            position: absolute;
-            z-index: 2;
-            transform: rotate(41deg);
-            top: 62px;
-            left: 296px;
-        }
-        
-        .center-frame {
-            background: #5E999B;
-            width: 8px;
-            height: 205px;
-            position: absolute;
-            z-index: 2;
-            transform: rotate(-33deg);
-            top: 28px;
-            left: 191px;
-        }
-        
-        .back-frame {
-            background: #5E999B;
-            width: 8px;
-            height: 121px;
-            position: absolute;
-            z-index: 2;
-            transform: rotate(39deg);
-            top: 84px;
-            left: 128px;
-        }
-        
-        .bottom-frame {
-            background: #5E999B;
-            width: 142px;
-            height: 8px;
-            position: absolute;
-            z-index: 2;
-            top: 199px;
-            left: 100px;
-        }
-        
-        .handlebar-front {
-            width: 60px;
-            height: 8px;
-            background: #5E999B;
-            z-index: 2;
-            position: absolute;
-            top: 33px;
-            left: 326px;
-            border-radius: 3px 0 0 3px;
-        }
-        
-        .handlebar-curve {
-            position: absolute;
-            top: 33px;
-            left: 362px;
-            width: 40px;
-            height: 40px;
-            border: 8px solid #666;
-            border-radius: 0 100% 100% 100%;
-            border-left: 8px solid transparent;
-        }
-        
-        .bottle-holder {
-            width: 20px;
-            height: 36px;
-            background: #daeded;
-            border: 3px solid #5E999B;
-            position: absolute;
-            top: 51px;
-            left: -25px;
-        }
-        
-        .bottle-holder:after {
-            width: 20px;
-            height: 3px;
-            content: "";
-            background: #5E999B;
-            position: absolute;
-            top: 22px;
-            left: 0;
-        }
-        
-        .bottle-holder::before {
-            background-color: #daeded;
-            width: 18px;
-            height: 10px;
-            border-radius: 30% / 100%;
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-            content: "";
-            position: absolute;
-            margin-top: -13px;
-            border: 1px solid #98baba;
-        }
-        
-        .bottle-holder>span {
-            position: absolute;
-            width: 9px;
-            height: 4px;
-            background: #666;
-            top: -17px;
-            left: 5px;
-        }
-        
-        .seat {
-            width: 50px;
-            height: 10px;
-            background: #666;
-            border-radius: 44%;
-            position: absolute;
-            top: 39px;
-            left: 128px;
-        }
-        
-        .seat>span {
-            width: 32px;
-            height: 19px;
-            background: #666;
-            border-radius: 100%;
-            position: absolute;
-            margin: 1px 0 0 -22px;
-            transform: rotate(-11deg);
-        }
-        
-        .seat::after {
-            width: 0px;
-            height: 0px;
-            border-style: solid;
-            border-width: 0 40px 16px 40px;
-            border-color: transparent transparent #666 transparent;
-            content: "";
-            position: absolute;
-            z-index: 3;
-            transform: rotate(-12deg);
-            position: absolute;
-            border-radius: 100%;
-            margin: 0 0 0 -26px;
-        }
-        
-        .seat:before {
-            width: 0px;
-            height: 0px;
-            border-style: solid;
-            border-width: 0 40px 16px 40px;
-            border-color: transparent transparent #666 transparent;
-            content: "";
-            position: absolute;
-            z-index: 3;
-            transform: rotate(179deg);
-            position: absolute;
-            border-radius: 100%;
-            margin: 0 0 0 -26px;
-        }
-        
-        .cycle-wheel-outer {
-            background: transparent;
-            border: 5px solid #aaa;
-            border-radius: 50%;
-            width: 190px;
-            height: 190px;
-            position: absolute;
-            margin-top: 100px;
-            margin-left: -9px;
-            animation: wheel-rotate 2s linear infinite;
-        }
-        
-        .cycle-wheel-outer:after {
-            background: transparent;
-            border: 4px solid #EF9058;
-            border-radius: 50%;
-            width: 176px;
-            height: 176px;
-            position: absolute;
-            margin: 3px;
-            content: "";
-        }
-        
-        ul {
-            list-style: none;
-        }
-        
-        .spoke {
-            position: absolute;
-            width: 1px;
-            height: 200px;
-            background: #ccc;
-            margin: -5px 0 0 95px;
-            z-index: 0;
-        }
-        
-        ul li:nth-of-type(2) {
-            transform: rotate(30deg);
-        }
-        
-        ul li:nth-of-type(3) {
-            transform: rotate(60deg);
-        }
-        
-        ul li:nth-of-type(4) {
-            transform: rotate(90deg);
-        }
-        
-        ul li:nth-of-type(5) {
-            transform: rotate(120deg);
-        }
-        
-        ul li:nth-of-type(6) {
-            transform: rotate(150deg);
-        }
-        
-        .inner-disc {
-            background: #666;
-            width: 20px;
+        .showtime {
+            width: 100px;
             height: 20px;
-            border-radius: 50%;
-            position: absolute;
-            left: 50%;
-            margin: -10px 0 0 -10px;
-            top: 50%;
+            background-color: red;
         }
-        
-        .inner-disc-2 {
-            background: transparent;
-            width: 6px;
-            height: 6px;
-            border: 2px solid #FFF;
-            border-radius: 50%;
-            position: absolute;
-            left: 50%;
-            /* margin: -5px 0 0 -5px;
-             */
-            transform: translate(-50%, -50%);
-            top: 50%;
+        #unable ,#selectstar ,#copy ,#txt{
+            width: 200px;
+            height: 40px;
+            border: 1px solid #ccc;
         }
-        
-        .inner-disc-2::after {
-            content: "";
-            background: transparent;
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            position: absolute;
-            left: 50%;
-            margin: -13px 0 0 -13px;
-            top: 50%;
-            border: 4px dotted #666;
+        #time {
+            width: 400px;
+            height: 30px;
+            border: 1px solid #ccc; 
         }
-        
-        .cycle-wheel-font {
+        #box {
+            width: 600px;
+            height: 600px;
+            border: 1px solid #ccc; 
+        }
+         .sel{
+            width: 100px;
+            height: 30px;
+        }
+        #topBar {
+            padding-left: 100px;
+            width: 100%;
+            height: 100px;
+            line-height: 100px;
+        }
+        #topBar span {
+            position: relative;
+            display: inline-block;
+            height: 25px;
+            width: 80px;
+            line-height: 25px;
+            text-align: center;
+            background: gainsboro;
+            margin-right: 35px;
+            pointer-events: none;
+        }
+        #topBar span::after {
+            cursor: pointer;
+            content: 'X';
             position: absolute;
-            right: 218px;
             top: 0;
+            right: -20px;
+            width: 20px;
+            background: gainsboro;
+            pointer-events: all;
         }
-        
-        .cycle-wheel {}
-        
-        .cycle-wheel-font .inner-disc-2::after {
-            content: '';
-            border: none;
+        table {
+            border-collapse: collapse;
+            margin: 10px auto;
+            width: 800px;
+            border: 1px solid;
         }
-        
-        .chain-rotation {
-            position: absolute;
-            z-index: 16;
+
+        th,
+        td {
+            border: 1px solid red;
+            text-align: center;
         }
-        
-        .outer-axle {
-            height: 70px;
-            width: 70px;
-            border-radius: 50%;
-            background: transparent;
-            border: 5px solid #666;
-            position: absolute;
-            margin: 165px 0 0 208px;
-            z-index: 3;
+        #page {
+            text-align: center;
         }
-        
-        .outer-axle:after {
-            content: "";
-            height: 74px;
-            width: 74px;
-            border-radius: 50%;
-            background: transparent;
-            border: 5px dotted #666;
-            margin: -7px;
-            position: absolute;
-            z-index: 3;
-            animation: wheel-rotate 2s linear infinite;
-        }
-        
-        .chain-disc-outer {
-            background: #FFF;
-            width: 22px;
-            height: 22px;
-            border: 5px solid #666;
-            border-radius: 50%;
-            position: absolute;
-            margin: 189px 0 0 232px;
-            z-index: 3;
-            content: "";
-        }
-        
-        .chain-up {
-            background-size: 8px 2px;
-            background-position: 0 0, 30px 30px;
-            width: 155px;
-            height: 4px;
-            position: absolute;
-            z-index: 9;
-            background: #EEE;
-            background-image: linear-gradient(90deg, #666 25%, transparent 25%, transparent 75%, #666 75%, #666);
-            background-size: 8px 2px;
-            transform: rotate(-9deg);
-            margin: 175px 0 0 87px;
-            animation: chainUp 2s linear infinite;
-        }
-        
-        .chain-bottom {
-            background-size: 8px 2px;
-            background-position: 0 0, 30px 30px;
-            width: 155px;
-            height: 4px;
-            position: absolute;
-            z-index: 9;
-            background: #EEE;
-            background-image: linear-gradient(90deg, #666 25%, transparent 25%, transparent 75%, #666 75%, #666);
-            background-size: 8px 2px;
-            -webkit-transform: rotate(9deg);
-            -moz-transform: rotate(9deg);
-            transform: rotate(13deg);
-            margin: 225px 0 0 82px;
-            animation: chainDown 2s linear infinite;
-        }
-        
-        .chain-rods {
-            height: 70px;
-            width: 6px;
-            background: #666;
-            position: absolute;
-            margin: 169px 0 0 245px;
-            z-index: 2;
-            animation: wheel-rotate 2s linear infinite;
-        }
-        
-        .chain-rods:before {
-            content: "";
-            height: 70px;
-            width: 6px;
-            background: #666;
-            position: absolute;
-            transform: rotate(120deg);
-        }
-        
-        .chain-rods:after {
-            content: "";
-            height: 70px;
-            width: 6px;
-            background: #666;
-            position: absolute;
-            transform: rotate(240deg);
-        }
-        
-        .chain-disc-inter {
-            background: #666;
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            position: absolute;
-            margin: 2px;
-            z-index: 4;
-        }
-        
-        .pedal-rod {
-            height: 120px;
-            width: 6px;
-            background: #666;
-            position: absolute;
-            margin: 142px 0 0 245px;
-            animation: wheel-rotate 2s linear infinite;
-        }
-        
-        .pedal-rod:before {
-            width: 40px;
-            height: 10px;
-            background: #666;
-            position: absolute;
-            margin: 10px;
-            content: "";
-            margin: -7px -17px;
-            animation: pedal1 2s linear infinite;
-        }
-        
-        .pedal-rod:after {
-            width: 40px;
-            height: 10px;
-            background: #666;
-            position: absolute;
-            margin: 10px;
-            content: "";
-            margin: 119px -17px;
-            animation: pedal2 2s linear infinite;
-        }
-        
-        @keyframes chainUp {
-            0% {
-                background-position: 0 25%;
-            }
-            100% {
-                background-position: 100% 0;
-            }
-        }
-        
-        @keyframes chainDown {
-            0% {
-                background-position: 100% 0;
-            }
-            100% {
-                background-position: 0 25%;
-            }
-        }
-        
-        @keyframes pedal1 {
-            0% {
-                transform: rotate(00deg);
-            }
-            25% {
-                transform: rotate(-140deg);
-            }
-            50% {
-                transform: rotate(-180deg);
-            }
-            75% {
-                transform: rotate(-240deg);
-            }
-            100% {
-                transform: rotate(-360deg);
-            }
-        }
-        
-        @keyframes pedal2 {
-            0% {
-                transform: rotate(00deg);
-            }
-            25% {
-                transform: rotate(-60deg);
-            }
-            50% {
-                transform: rotate(-180deg);
-            }
-            75% {
-                transform: rotate(-340deg);
-            }
-            100% {
-                transform: rotate(-360deg);
-            }
-        }
-        
-        @keyframes wheel-rotate {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
+        #page span {
+            display: inline-block;
+            width: 135px;
+            height: 20px;
+            line-height: 20px;
+            font-size: 20px;
         }
     </style>
+
 </head>
+<div>
+    <select id="select" class="sel">
+        <option value="bj">北京</option>
+        <option value="sh">上海</option>
+        <option value="gz">广州</option>
+    </select>
+    <select id="val" class="sel"></select>　
+</div>
+<div class="showtime" id="showTime"></div>
+<div id="unable">禁用右键 </div>
+<div id="selectstar">禁止选取</div>
+<div id="copy">禁止复制</div>
+<div id="txt">鼠标在上时，背景颜色修改为#CC66CC</div>
+<input type="button" value="按钮" id="btn"><br>
+<input type="button" value="变色" id="btn_1"><br>
+<input type="email" name="" id="email"> <br>
+<input type="button" value="邮箱验证" id="btn_email"><br>
+<input type="button" name="" id="btn_time" value="显示出当前系统时间"><br>
+<input type="text" id="time"><br>
+<div id="topBar"></div>
+<table>
+    <thead>
+        <tr>
+            <th>
+                <input type="checkbox" id="checkbox-all"><span>全选</span>
+            </th>
+            <th>名称</th>
+            <th>编号</th>
+            <th>分类</th>
+            <th>描述</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
 
 <body>
-    <div class="cycle-outer">
-        <div class="cycle-wrapper">
-            <!-- 3��?�� -->
-            <div class="cycle_body">
-                <div class="front-wheel-frame"></div>
-                <div class="top-frame"></div>
-                <div class="front-frame">
-                    <div class="bottle-holder">
-                        <span></span>
-                    </div>
-                </div>
-                <div class="center-frame"></div>
-                <div class="back-frame"></div>
-                <div class="bottom-frame"></div>
-                <div class="handlebar-front"></div>
-                <div class="handlebar-curve"></div>
-                <div class="seat"><span></span></div>
-            </div>
-            <!-- o��?? -->
-            <div class="cycle-wheel       cycle-wheel-back">
-                <div class="cycle-wheel-outer">
-                    <div class="cycle-wheel-inner">
-                        <div class="cycle-wheel-inner-padding">
-                            <ul class="spoke-container">
-                                <li class="spoke"></li>
-                                <li class="spoke"></li>
-                                <li class="spoke"></li>
-                                <li class="spoke"></li>
-                                <li class="spoke"></li>
-                                <li class="spoke"></li>
-                            </ul>
-                            <div class="inner-disc"></div>
-                            <div class="inner-disc-2"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- ?��?? -->
+    <script>
+        function test1() {
+            var arr = 'abaasdffggghhjjkkgfddsssss3444343';
+            // 字符串的字节长度 
+            console.log(arr.length);
 
-            <div class="cycle-wheel       cycle-wheel-font">
-                <div class="cycle-wheel-outer">
-                    <div class="cycle-wheel-inner">
-                        <div class="cycle-wheel-inner-padding">
-                            <ul class="spoke-container">
-                                <li class="spoke"></li>
-                                <li class="spoke"></li>
-                                <li class="spoke"></li>
-                                <li class="spoke"></li>
-                                <li class="spoke"></li>
-                                <li class="spoke"></li>
-                            </ul>
-                            <div class="inner-disc"></div>
-                            <div class="inner-disc-2"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- ???�� -->
-            <div class="chain-rotation">
-                <div class="outer-axle"></div>
-                <div class="chain-disc-outer">
-                    <div class="chain-disc-inter"></div>
-                </div>
-                <div class="chain-up"></div>
-                <div class="chain-bottom"></div>
-                <div class="chain-rods"></div>
-                <div class="pedal-rod"></div>
-            </div>
-        </div>
-    </div>
+            // 取出指定位置的字符，如:0,3,5,9等 
+            console.log(arr[0]);
+            console.log(arr[3]);
+            console.log(arr[5]);
+            console.log(arr[9]);
+
+            // 查找指定字符是否在以上字符串中存在，如:i，c ，b等 不存在则打印-1；
+            console.log(arr.indexOf("i"));
+            console.log(arr.indexOf("c"));
+            console.log(arr.indexOf("b"));
+
+            //   替换指定的字符，如:g替换为22,ss替换为b等操作方法 
+            var index = arr.indexOf("g");
+            while (index !== -1) {
+                var arr = arr.replace("g", "22");
+                index = arr.indexOf("g");
+            }
+            var index = arr.indexOf("ss");
+            while (index !== -1) {
+                var arr = arr.replace("ss", "b");
+                index = arr.indexOf("ss");
+            }
+            console.log(arr);
+
+            //  截取指定开始位置到结束位置的字符串，如:取得1-5的字符串 
+            arr = arr.slice(0, 5);
+            console.log(arr);
+
+            //  找出以上字符串中出现次数最多的字符和出现的次数 
+            var num = [];
+            for (var i = 0; i < arr.length; i++) {
+                var index = 1;
+                for (var j = i + 1; j < arr.length; j++) {
+                    if (arr[i] == arr[j]) {
+                        index++;
+                    }
+                }
+                num.push(index);
+            }
+            Math.max(...num);
+            console.log("出现了最多的字符是" + arr[num.indexOf(Math.max(...num))], "出现了" + Math.max(...num) + "次");
+
+            //  遍历字符串，并将遍历出的字符两头添加符号“@”输出至当前的文档页
+            var num = [];
+            for (var i = 0; i < arr.length; i++) {
+                num.push("@" + arr[i] + "@");
+            }
+            var str = num.join("")
+            document.write(str);
+
+
+        }
+        test1();
+
+        function test2() {
+            //     二、 根据当前日期进行以下方面的处理:
+            //     1、 取得日期的年份、月份、天、时、分、秒，并转换成大写日期格式
+            //     如: 2013年8月17日0时30分20秒
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            var hour = date.getHours();
+            var minute = date.getMinutes();
+            var second = date.getSeconds();
+            console.log(year + "年" + month + "月" + day + "日" + hour + "时" + minute + "分" + second + "秒");
+
+
+            //  2、 根据日期的不同时间段，做问候语: 
+            // 早上8:00-12:00 :“早上好～欢迎登陆系统” 
+            // 中午12:00-14:00:“中午好～该休息了” 
+            // 下午14:00-18:00:“下午好～欢迎登陆系统” 
+            // 晚上19:00-00:00:“晚上好～XXXXXXXXX” 
+            if (hour >= 8 && hour < 12) {
+                alert("早上好～欢迎登陆系统")
+            } else if (hour >= 12 && hour < 14) {
+                alert("中午好～该休息了")
+            }
+            else if (hour >= 14 && hour < 18) {
+                alert("下午好～欢迎登陆系统")
+            } else if (hour >= 19 && hour <= 23) {
+                alert("晚上好～XXXXXXXXX")
+            }
+
+            // 3、 计算当前时间向前、向后的日期，并取出是星期几。 （扩展）
+
+            // 1、 函数调用，建立两个函数，一个函数是中学二次函数表达式的计算方法，另一个函数是给定任意的20个x值，
+            // 调用前一个函数计算y对应的值，并使用方式输出20个计算结果。 （就是写两个函数，一个函数调用另一个函数）
+            function fn1(x) {
+                return x * x + 5;
+            }
+            function fn() {
+                var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+                for (var i = 0; i < arr.length; i++) {
+
+                    var y = fn1(arr[i]);
+                    console.log(y)
+                }
+            }
+            fn();
+
+
+            // 2、 使用二重循环打印9×9乘法表。
+            var str = ''
+            for (var i = 1; i <= 9; i++) {
+                for (var j = 1; j <= i; j++) {
+                    str += j + "X" + i + "=" + i * j + "\t";
+                }
+                str += "\n";
+
+            }
+            console.log(str);
+
+
+        }
+        test2();
+
+        function test3() {
+            //   三、实现二级级联的 
+            // 使用JavaScript中变量定义省份及对应的城市，应用Select标签对象
+            // 下拉菜单选中效果。也就是说，在省份下拉菜单中，选中一个省份时，在城市下拉菜单中出现对应城市选择内容。
+            var select = document.querySelector("#select");
+            select.onchange = function () {
+                var selvalue = select.value;
+                var val = document.querySelector("#val");
+                switch (selvalue) {
+                    case "bj": val.innerHTML = "<option>东城区</option><option>西城区</option><option>南城区</option><option>北城区</option>"; break;
+                    case "sh": val.innerHTML = "<option>东城区</option><option>西城区</option><option>南城区</option><option>北城区</option>"; break;
+                    case "gz": val.innerHTML = "<option>东城区</option><option>西城区</option><option>南城区</option><option>北城区</option>"; break;
+                    default: alert("erro");
+                }
+            };
+        }
+        test3();
+
+
+        function test4() {
+
+            //    1、 在打开页面时弹出一个确认对话框
+            // 2、 显示:“你确定继续浏览吗,”。如果用户点击确定， 
+            // 则用alert显示信息“欢迎光临～”;若用户点击取消，则用alert显示信息“欢迎再来～”并使用window.close 关闭页面
+
+            var flag = confirm('你确定继续浏览吗,');
+            if (flag) {
+                alert('欢迎光临～');
+            } else {
+                alert('欢迎再来～');
+                window.close();
+            }
+
+        }
+        test4();
+        function test5() {
+            // 1、 使用循环语句和document.write，依次以h1~h6的6级标题格式在页面中输出6行“欢迎 光临”。 
+            for (var i = 1; i <= 6; i++) {
+                document.write('<h' + i + '>欢迎 光临</h' + i + '>');
+            }
+
+            // 2、 在页面中showtime的div中显示当前时间。格式如下: 
+            // ::。每隔一秒刷新一次。 
+            // 提示:使用innerText/innerHTML。 
+            var showTime = document.querySelector('#showTime')
+            setInterval(timeDiv, 1000)
+            timeDiv();
+            function timeDiv() {
+                var time = new Date();
+                var hour = String(time.getHours()).padStart(2, '0');
+                var minutes = String(time.getMinutes()).padStart(2, '0');
+                var second = String(time.getSeconds()).padStart(2, '0');
+                var time = hour + ':' + minutes + ':' + second;
+                showTime.innerText = time;
+            }
+
+        }
+        test5();
+
+        function test6() {
+            //1、 使用onkeypress事件，在页面按下字符按键时，获取用户按下的按键编号，并在状态栏 
+            // 用以下格式显示: 
+            // “您刚才所按下的按键为:„”。 
+            document.onkeypress = function (e) {
+                console.log('您刚才所按下的按键为:' + e.keyCode);
+            }
+
+            // 2、 在页面中禁止右键的使用，并在用户点击鼠标右键时使用alert弹出提示
+            var unable = document.querySelector('#unable')
+            unable.oncontextmenu = function (e) {
+                alert('禁用右键')
+                e.preventDefault();
+            }
+
+            //在页面中使用onselectstart禁止选择操作，并在用户进行选择时使用alert弹出提示信息:  “禁止选取～”
+            var selselectstarect = document.querySelector('#selectstar')
+            selectstar.onselectstart = function () {
+                alert('禁止选取～');
+            }
+
+            // 在页面中使用oncopy禁止复制操作，并在用户进行复制时使用alert弹出提示信息: “禁止选取～”
+            var copy = document.querySelector('#copy')
+            copy.oncopy = function () {
+                alert('禁止复制～');
+            }
+
+            // 对页面中txt的div按以下要求设置鼠标事件: 鼠标在上时，背景颜色修改为#CC66CC
+            var txt = document.querySelector('#txt')
+            txt.onmouseenter = function () {
+                bgc = this.style.backgroundColor;
+                this.style.backgroundColor = "#CC66CC";
+            }
+            txt.onmouseleave = function () {
+                this.style.backgroundColor = bgc;
+            }
+        }
+        test6();
+
+        function test7() {
+            // 1、页面上有一个按钮，点击能弹出一个对话框询问“请问你是女孩吗,”;如果选择确定，则显示“太好了～”，否则显示“没劲” 
+            var btn = document.querySelector('#btn')
+            btn.onclick = function () {
+                var flag = confirm('请问你是女孩吗');
+                if (flag) {
+                    alert('太好了~');
+                } else {
+                    alert('没劲~~~~');
+                }
+
+            }
+
+            // 2、页面上有一个按钮，点击后能让网页的背景不停变色 
+            var btn_1 = document.querySelector('#btn_1')
+            function fn() {
+                var r = Math.floor(Math.random() * 256);
+                var g = Math.floor(Math.random() * 256);
+                var b = Math.floor(Math.random() * 256);
+                var color = 'rgb(' + r + ',' + g + ',' + b + ')';
+                return color;
+            }
+            var flag = true;
+            var time = null;
+            btn_1.onclick = function () {
+                if (flag) {
+                    time = setInterval(function () {
+                        document.body.style.backgroundColor = fn();
+                    }, 300);
+                    flag = false;
+                } else {
+                    clearInterval(time);
+                    flag = true;
+                }
+            }
+
+            // 3、页面上有一个按钮及文本框，在文本框中输入邮箱后，点击按钮能进行验证，要求不能为空，且必须包含@和. 
+            var btn_email = document.querySelector('#btn_email')
+            btn_email.onclick = function () {
+                var email = document.querySelector('#email');
+                var reg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+                if (reg.test(email.value)) {
+                    alert('成功')
+                } else {
+                    alert('失败')
+                }
+            }
+
+            // 4、页面上有一个按钮，点击后能在文本框内显示出当前系统时间，如下图所示 
+            var btn_time = document.querySelector('#btn_time')
+            var time = document.querySelector('#time')
+            btn_time.onclick = function () {
+                var date = new Date();
+                time.value = date;
+            }
+        }
+        test7()
+
+        function test8() {
+            let data = [
+                { name: '冰箱', id: 'bx001', catagory: '家电', desc: '可以冷藏东西的东西' },
+                { name: '冰柜', id: 'bx002', catagory: '家电', desc: '可以冷藏东西的东西' },
+                { name: '空调', id: 'kt001', catagory: '家电', desc: '夏天必备' },
+                { name: '电视', id: 'ds001', catagory: '家电', desc: '可以看小电影' },
+                { name: '电脑', id: 'dn001', catagory: '家电', desc: '网上冲浪' },
+                { name: '卷纸', id: 'jz001', catagory: '生活用品', desc: '卷起来的纸' },
+                { name: '小刀', id: 'xd001', catagory: '生活用品', desc: '不是电动车的那个小刀' },
+                { name: '洗衣液', id: 'xyy001', catagory: '日常用品', desc: '洗衣服用的，听说和香水一样哦' },
+                { name: '麦片', id: 'mp001', catagory: '食物', desc: '可以吃的东东' },
+                { name: '82年红茶', id: 'hc001', catagory: '饮料', desc: '听说只有帅气的人才能天天喝' },
+            ]
+            var tbody = document.getElementsByTagName("tbody")[0];
+            for (let i = 0; i < data.length; i++) {
+                var tr = document.createElement("tr");
+                tbody.appendChild(tr);
+                var obj = data[i];
+                var th = document.createElement("th");
+                tr.appendChild(th);
+                var checkbox = document.createElement("input");
+                th.appendChild(checkbox);
+                checkbox.type = "checkbox";
+                checkbox.id = "checkbox" + (i + 1)
+                for (var k in obj) {
+                    td = document.createElement("td");
+                    tr.appendChild(td);
+                    td.innerText = obj[k];
+                }
+            }
+            var checkboxAll = document.getElementById("checkbox-all");
+            var input = tbody.getElementsByTagName("input");
+            var topBar = document.getElementById("topBar");
+            checkboxAll.onclick = function () {
+                for (let i = 0; i < input.length; i++) {
+                    if (!input[i].checked) {
+                        input[i].checked = this.checked;
+                        var span = document.createElement("span");
+                        topBar.appendChild(span);
+                        span.innerText = input[i].parentNode.nextElementSibling.innerText;
+                        span.onclick = function () {
+                            topBar.removeChild(this);
+                            that = this;
+                            shanchu(that);
+                        }
+                    }
+                }
+                if (!this.checked) {
+                    for (let i = 0; i < input.length; i++) {
+                        input[i].checked = this.checked;
+                    }
+                    topBar.innerHTML = '';
+                }
+            }
+            fn();
+            function fn() {
+                for (let i = 0; i < input.length; i++) {
+                    input[i].onclick = function () {
+                        if (input[i].checked) {
+                            var span = document.createElement("span");
+                            topBar.appendChild(span);
+                            span.innerText = this.parentNode.nextElementSibling.innerText;
+                            span.onclick = function () {
+                                topBar.removeChild(this);
+                                that = this;
+                                shanchu(that);
+                            }
+                        } else {
+                            for (let i = 0; i < topBar.children.length; i++) {
+                                if (topBar.children[i].innerText == this.parentNode.nextElementSibling.innerText) {
+                                    topBar.removeChild(topBar.children[i]);
+                                }
+                            }
+                        }
+                        var flag = true;
+                        for (let j = 0; j < input.length; j++) {
+                            if (input[j].checked != true) {
+                                flag = false;
+                                break;
+                            }
+                        }
+                        checkboxAll.checked = flag;
+                    }
+                }
+            }
+            function shanchu(that) {
+                for (let i = 0; i < input.length; i++) {
+                    if (that.innerText == input[i].parentNode.nextElementSibling.innerText) {
+                        input[i].checked = false;
+                    }
+                }
+                checkboxAll.checked = false;
+            }
+        }
+        test8()
+
+    </script>
 </body>
 
 </html>

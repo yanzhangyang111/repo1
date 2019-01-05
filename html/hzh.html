@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <title>作业</title>
     <style>
         * {
@@ -24,37 +24,37 @@
             border: 1px solid yellowgreen;
             background-color: yellow;
         }
-        
-        #txt {
-            width: 200px;
-            height: 200px;
-            line-height: 200px;
-            color: #FFF;
-            background-color: skyblue;
+
+        .div_four{
             overflow: hidden;
         }
-        #select {
+
+        #txt,
+        #select,
+        #copy,
+        #unable {
             width: 200px;
             height: 200px;
+            color: #FFF;
+            float: left;
+        }
+        #txt {
+            line-height: 200px;
+            background-color: skyblue;
+        }
+        #select {
             padding-top: 80px;
             box-sizing: border-box;
-            color: #FFF;
             background-color: pink;
         }
         
         #copy {
-            width: 200px;
-            height: 200px;
-            box-sizing: border-box;
             padding-top: 80px;
-            color: #FFF;
+            box-sizing: border-box;
             background-color: purple;
         }
         #unable {
-            width: 200px;
-            height: 200px;
             line-height: 200px;
-            color: #FFF;
             background-color: powderblue;
         }
     </style>
@@ -264,28 +264,30 @@
             console.log('您刚才所按下的按键为:' + e.keyCode);
         }
     </script>
-    <div id="unable">在页面中禁止右键的使用</div>
+    <div class="div_four">
+        <div id="unable">在页面中禁止右键的使用</div>
+        <div id="select">在页面中使用onselectstart禁止选择操作</div>
+        <div id="copy">在页面中使用oncopy禁止复制操作</div>
+        <div id="txt">鼠标在上时，背景颜色修改为#CC66CC</div>
+    </div>
     <script>
         document.getElementById('unable').oncontextmenu = function(e) {
             alert('禁用右键')
             e.preventDefault();
         }
     </script>
-    <div id="select">在页面中使用onselectstart禁止选择操作</div>
     <script>
         //在页面中使用onselectstart禁止选择操作，并在用户进行选择时使用alert弹出提示信息:  “禁止选取～”
         document.getElementById('select').onselectstart = function() {
             alert('禁止选取～');
         }
     </script>
-    <div id="copy">在页面中使用oncopy禁止复制操作</div>
     <script>
         // 在页面中使用oncopy禁止复制操作，并在用户进行复制时使用alert弹出提示信息: “禁止选取～”
         document.getElementById('copy').oncopy = function() {
             alert('禁止复制～');
         }
     </script>
-    <div id="txt">鼠标在上时，背景颜色修改为#CC66CC</div>
     <script>
         var bg = null;
         // 对页面中txt的div按以下要求设置鼠标事件: 鼠标在上时，背景颜色修改为#CC66CC
