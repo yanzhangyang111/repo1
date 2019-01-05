@@ -1,21 +1,23 @@
-
-body{
+body {
     overflow: hidden;
 }
-p{
+
+p {
     padding: 3px 5px;
-    white-space:nowrap;
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-#txt{
+
+#txt {
     float: left;
     width: 50%;
     height: 50px;
     font-size: 32px;
     border: 1px solid #f00;
 }
-#btn-dm{
+
+#btn-dm {
     float: left;
     width: 50%;
     height: 50px;
@@ -23,24 +25,31 @@ p{
     text-align: center;
 }
 
-#homework{
+#homework {
     position: absolute;
     left: 50%;
     top: 50%;
     width: 50%;
     height: 50%;
-    transform:translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     border: 1px solid #000;
-    display:flex;
+    display: flex;
     flex-direction: column;
-    justify-content:flex-start;
+    justify-content: flex-start;
 }
-#homework>.homework-head{
-    flex:1;
-    display:flex;
+@media screen and (max-width:1000px) {
+    #homework {
+        width: 80%;
+    }
+}
+
+#homework>.homework-head {
+    flex: 1;
+    display: flex;
     position: relative;
     border-bottom: 1px solid #000;
 }
+
 /* .homework-head::before{
     content:"";
     display: block;
@@ -51,57 +60,64 @@ p{
     height: 100%;
     background-color: rgba(0,0,0,.5);
 } */
-#homework>.homework-head>span{
-    flex:1;
+
+#homework>.homework-head>span {
+    flex: 1;
     text-align: center;
     line-height: 30px;
-    cursor:pointer;
-}
-span.current{
-    background-color: rgba(0,0,0,.5);
-    
+    cursor: pointer;
 }
 
-#homework>.homework-body{
-    flex:9;
+span.current {
+    background-color: rgba(0, 0, 0, .5);
 }
-#homework>.homework-body>div{
+
+#homework>.homework-body {
+    flex: 9;
+}
+
+#homework>.homework-body>div {
     display: none;
     width: 100%;
     height: 90%;
-    word-break:break-all;
+    word-break: break-all;
     /* text-indent:2em; */
     /* background-color: #0ff; */
 }
-#homework>.homework-body>div.show{
-    display:block
+
+
+
+#homework>.homework-body>div.show {
+    display: block
 }
-.answer{
+
+.answer {
     position: absolute;
     left: 50%;
-    bottom:20px;
-    transform:translate(-50%,0);
+    bottom: 20px;
+    transform: translate(-50%, 0);
     width: 80px;
     height: 30px;
     background-color: red;
     border-radius: 20px;
     text-align: center;
     line-height: 20px;
-    color:rgb(233, 224, 105);
+    color: rgb(233, 224, 105);
 }
 
-.answer+input{
+.answer+input {
     border: 1px solid #ccc;
 }
 
-.showtime{
+.showtime {
     position: absolute;
     top: 50%;
     left: 50%;
     border: 1px solid #0ff;
-    transform:translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
+
 #email,
-#nowtime{
+#nowtime {
     border: 1px solid #0ff;
 }
