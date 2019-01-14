@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="txt">123454566asb4455kakvkmmb</div>
+    <input type="button" value="按钮1" class="btn1">
+    <input type="button" value="按钮变色" class="btn2">
+    <input type="button" value="清除按钮变色" class="btn3">
+    <input type="emai">
+    <button>按钮</button><br>
+    <input type="text" value="" placeholder="请输入邮箱" id="yx"><br /><br />
+    <button type="button" id="bt">提交</button>
+    <form name="form1" action="" method="get">
+        <select name="province" onChange="setCity(this, this.form.city);">
+            <option value="0">选择省</option>
+            <option value="安徽省">安徽省</option>
+            <option value="江苏省">江苏省</option>
+        </select>
+        <select name="city" id="citys">
+            <option value="0">选择城市</option>
+        </select>
+    </form>
+    <script>
+        /* 一、 给定一个字符串例如:
+        “abaasdffggghhjjkkgfddsssss3444343”; 问题如下:
+        1、 字符串的字节长度
+        2、 取出指定位置的字符，如: 0, 3, 5, 9等
+        3、 查找指定字符是否在以上字符串中存在，如: i，c ，b等
+        4、 替换指定的字符，如: g替换为22, ss替换为b等操作方法
+        5、 截取指定开始位置到结束位置的字符串，如: 取得1 - 5的字符串
+        6、 找出以上字符串中出现次数最多的字符和出现的次数
+        7、 遍历字符串，并将遍历出的字符两头添加符号“@”输出至当前的文档页面 */
+
+        // 第1小题
+        (function () {
+            var str = "abaasdffggghhjjkkgfddsssss3444343";
+            var result = str.length;
+            console.log(result);
+            // 第2小题
+            console.log(str[0]);
+            console.log(str[3]);
+            console.log(str[5]);
+            console.log(str[9]);
+            // 第3小题
+            console.log(str.indexOf("i"));
+            console.log(str.indexOf("c"));
+            // 从头开始查找第一个匹配的字符,返回对应索引值
+            console.log(str.indexOf("b"));
+            // 第4小题
+            console.log(str.replace("g", "22"));
+            console.log(str.replace("ss", "b"));
+            console.log(str.slice(1, 6));
+            //  第6小题
+            // 将字符串转换成数组
+            var newArr = str.split("");
+            // 创建一个对象
+            var json = {};
+            // 遍历数组，判断对象中是否存在数组中的值，如果存在值+1，不存在赋值为1
+            for (var i = 0; i < newArr.length; i++) {
+                if (json[newArr[i]]) {
+                    json[newArr[i]] += 1;
+                } else {
+                    json[newArr[i]] = 1;
+                }
+            }
+            //求出每个字符对应出现的次数放在对象中
+            console.log(json)
+            //定义两个变量存储字符值，字符出现的字数
+            var num = 0;
+            var number;
+            for (var k in json) {
+                if (json[k] > num) {
+                    num = json[k];
+                    number = k;
+                }
+            }
+            console.log("出现次数：" + num + "最多的字符：" + number);
+        })();
+
+        // 3、 函数调用，建立两个函数，一个函数是中学二次函数表达式的计算方法，
+        // 另一个函数是给定任意的20个x值，调用前一个函数计算y对应的值，并使用方式输出20个计算结果。 
+        // （就是写两个函数，一个函数调用另一个函数）
+        (function () {
+            function getSquare() {
+                var y = 0;
+                for (var i = 0; i < arguments.length; i++) {
+                    y = arguments[i] * arguments[i];
+                    console.log(y);
+                }
+            }
+            getSquare(2, 4, 5, 6, 10, 32, 21, 45, 65, 23, 45, 12, 45, 3, 5, 1, 2, 11, 21)
+        })();
+
+        // 4、 使用二重循环打印9×9乘法表。
+        (function () {
+            var str = "";
+            for (var i = 1; i < 10; i++) {
+                for (var j = 1; j <= i; j++) {
+                    str += j + "×" + i + "=" + i * j + "\t";
+                }
+                str += "\n";
+            }
+            console.log(str);
+        });
+
+
+
+        // 1、 使用onkeypress事件，在页面按下字符按键时，获取用户按下的按键编号，并在状态栏
+        // 用以下格式显示:
+        // “您刚才所按下的按键为:""。
+        (function () {
+            window.onmousedown = function (e) {
+                console.log(e.button)
+            }
+        })();
+
+        // 2、 在页面中禁止右键的使用，并在用户点击鼠标右键时使用alert弹出提示
+        (function () {
+            document.onmousedown = function (e) {
+                if (e.button == 2) {
+                    alert("右键不能用")
+                }
+            }
+        })();
+
+        // 3、 在页面中使用onselectstart禁止选择操作，并在用户进行选择时使用alert弹出提示信息:
+        // “禁止选取～”。
+        (function () {
+            document.onselectstart = function () {
+                return false;
+            }
+        })();
+
+        // 4、 在页面中使用oncopy禁止复制操作，并在用户进行复制时使用alert弹出提示信息: “禁
+        // 止选取～”。
+        (function () {
+            document.oncopy = function () {
+                alert("禁止选取")
+                return false;
+            }
+        })();
+
+        // 5、 对页面中txt的div按以下要求设置鼠标事件:鼠标在上时，背景颜色修改为#CC66CC，
+        (function () {
+            document.querySelector("#txt").onmouseover = function () {
+                this.style.backgroundColor = "#CC66CC";
+            }
+        })();
+
+        // 1、页面上有一个按钮，点击能弹出一个对话框询问“请问你是女孩吗,”;如果选择确定，则显示“太好了～”，否则显示“没劲”
+        (function () {
+            document.querySelector(".btn1").onclick = function () {
+                var str = prompt("请问你是女孩吗?");
+                if (str) {
+                    alert("太好");
+                } else {
+                    alert("没劲");
+                }
+            }
+        })();
+
+        // 2、页面上有一个按钮，点击后能让网页的背景不停变色
+        (function () {
+            var timerId;
+            var btn2 = document.querySelector(".btn2");
+            document.querySelector(".btn2").onclick = function () {
+
+                timerId = setInterval(function () {
+                    var r = getRandom(0, 255);
+                    var g = getRandom(0, 255);
+                    var b = getRandom(0, 255);
+                    document.documentElement.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+                }, 1000)
+            }
+            document.querySelector(".btn3").onclick = function () {
+                clearInterval(timerId);
+            }
+            function getRandom(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+        })();
+
+        // 3、页面上有一个按钮及文本框，在文本框中输入邮箱后，点击按钮能进行验证，
+        // 要求不能为空，且必须包含@和.
+    </script>
+    <script>
+        cities = new Object();
+        cities['安徽省'] = new Array('合肥', '马鞍山', '芜湖', '安庆');
+        cities['江苏省'] = new Array('南京', '苏州', '常州', '无锡');
+
+        function setCity(province, city) {
+            var pv, cv;
+            var i, ii;
+
+            pv = province.value;
+            cv = city.value;
+
+            city.length = 1;
+
+            if (pv == '0') return;
+            if (typeof (cities[pv]) == 'undefined') return;
+
+            for (i = 0; i < cities[pv].length; i++) {
+                ii = i + 1;
+                city.options[ii] = new Option();
+                city.options[ii].text = cities[pv][i];
+                city.options[ii].value = cities[pv][i];
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>

@@ -65,13 +65,18 @@
     Maxtime(str);
 
     // 7、 遍历字符串，并将遍历出的字符两头添加符号“@”输出至当前的文档页面。
-    var arr = str.split(',');
-    arr.push('@');
-    arr.unshift('@');
-    str = arr.join('');
-    for (var i = 0; i < str.length; i++) {
-        document.write(str.charAt(i));
-    }
+    (function () {
+        var str = 'abaasdffggghhjjkkgfddsssss3444343';
+        var arr = str.split("");
+        console.log(arr);
+        arr.push('@');
+        arr.unshift('@');
+        str = arr.join('');
+        for (var i = 0; i < str.length; i++) {
+            document.write(str.charAt(i));
+        }
+    })()
+
 </script>
 
 </html>
